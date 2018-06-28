@@ -31,9 +31,11 @@ namespace WPFSklep
             this.Close();
             k.Show();
         }
-        private void lblZaloguj_Click(object sender, RoutedEventArgs e)
+       
+        private void btnZalogujsie_Click(object sender, RoutedEventArgs e)
         {
-
+            Logowanie logowanie = new Logowanie();
+            logowanie.Show();
         }
     }
 }

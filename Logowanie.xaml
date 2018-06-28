@@ -11,12 +11,12 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lblLogin" Content="Login:" HorizontalAlignment="Left" Height="31" Margin="16,21,0,0" VerticalAlignment="Top" Width="108"/>
+        <Label x:Name="lblLogin" Content="Login:" HorizontalAlignment="Left" Height="31" Margin="16,21,0,0" VerticalAlignment="Top" Width="44"/>
         <Label x:Name="lblHaslo" Content="Hasło:" HorizontalAlignment="Left" Height="26" Margin="16,50,0,0" VerticalAlignment="Top" Width="49"/>
-        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="21" Margin="70,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
-        <PasswordBox x:Name="pbHaslo" HorizontalAlignment="Left" Height="20" Margin="70,50,0,0" VerticalAlignment="Top" Width="132"/>
-        <Button x:Name="btnZaloguj" Content="Zaloguj" HorizontalAlignment="Left" Height="22" Margin="70,99,0,0" VerticalAlignment="Top" Width="132"/>
-        <Label x:Name="lblError" Content="Błędny login lub hasło" HorizontalAlignment="Left" Height="24" Margin="70,74,0,0" VerticalAlignment="Top" Width="132" Foreground="Red" FontSize="10" />
+        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="21" Margin="65,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
+        <PasswordBox x:Name="pbHaslo" HorizontalAlignment="Left" Height="20" Margin="65,52,0,0" VerticalAlignment="Top" Width="133"/>
+        <Button x:Name="btnZaloguj" Content="Zaloguj" HorizontalAlignment="Left" Height="22" Margin="65,99,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label x:Name="lblError" Content="Błędny login lub hasło" HorizontalAlignment="Left" Height="24" Margin="77,74,0,0" VerticalAlignment="Top" Width="109" Foreground="Red" FontSize="10" />
 
     </Grid>
 </Window>

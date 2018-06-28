@@ -13,8 +13,8 @@
         <Label x:Name="label" Content="CZEREŚNIE.NET" HorizontalAlignment="Left" Height="34" Margin="89,68,0,0" VerticalAlignment="Top" Width="161" FontSize="22"/>
         <Button x:Name="btnKoszyk" Content="Koszyk" HorizontalAlignment="Left" Margin="55,238,0,0" VerticalAlignment="Top" Width="226" Height="40" FontSize="22" FontFamily="Sitka Subheading"/>
         <Button x:Name="btnWyjscie" Content="Wyjście" HorizontalAlignment="Left" Height="40" Margin="55,295,0,0" VerticalAlignment="Top" Width="226" FontSize="22" FontFamily="Sitka Subheading"/>
-        <Label x:Name="lblZaloguj" Content="Zaloguj się" HorizontalAlignment="Left" Height="30" Margin="264,0,0,0" VerticalAlignment="Top" Width="77" Foreground="Red"/>
-        <Label x:Name="lblZaloz" Content="Załóż konto" HorizontalAlignment="Left" Height="29" Margin="0,1,0,0" VerticalAlignment="Top" Width="125" Foreground="Red"/>
+        <Button x:Name="btnZalogujsie" Content="Zaloguj się" HorizontalAlignment="Left" Height="20" Margin="264,4,0,0" VerticalAlignment="Top" Width="67" BorderBrush="White" Foreground="Red" Background="White" Click="btnZalogujsie_Click"/>
+        <Button x:Name="btnZarejestrujsie" Content="Zarejestruj się" HorizontalAlignment="Left" Height="19" Margin="0,5,0,0" VerticalAlignment="Top" Width="95" Background="White" BorderBrush="White" Foreground="Red"/>
 
     </Grid>
 </Window>
