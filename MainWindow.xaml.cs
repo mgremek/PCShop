@@ -37,5 +37,11 @@ namespace WPFSklep
             Logowanie logowanie = new Logowanie();
             logowanie.Show();
         }
+
+        private void btnZarejestrujsie_Click(object sender, RoutedEventArgs e)
+        {
+            Rejestracja rejestracja = new Rejestracja();
+            rejestracja.Show();
+        }
     }
 }
