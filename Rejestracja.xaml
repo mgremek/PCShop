@@ -44,6 +44,7 @@
         <Label x:Name="lblErrHaslo" Content="Hasło jest niepoprawne -&#xD;&#xA;min. 6 znaków" Grid.Column="1" HorizontalAlignment="Left" Margin="88.4,131,0,0" VerticalAlignment="Top" Width="127" FontSize="9" Foreground="Red" Visibility="Hidden"/>
         <Label x:Name="lblErrEmail" Content="Błędny adres e-mail" HorizontalAlignment="Left" Margin="84,151,0,0" VerticalAlignment="Top" Width="146" FontSize="9" Foreground="Red" Visibility="Hidden"/>
         <Label x:Name="lblErrDane" Content="Uzupełnij wszystkie dane" HorizontalAlignment="Left" Height="23" Margin="10,229,0,-8" VerticalAlignment="Top" Width="123" Foreground="Red" FontSize="9"/>
+        <Label x:Name="lblErrBd" Content="Błąd połączenia z bazą danych" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="92.4,229,0,-8" VerticalAlignment="Top" Width="139" FontSize="9" Foreground="Red" Visibility="Hidden"/>
 
     </Grid>
 </Window>
