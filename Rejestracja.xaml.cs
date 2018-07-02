@@ -34,6 +34,13 @@ namespace WPFSklep
         {
             UkryjLabele(); //<-ukrywa info o bledach
 
+            //Połączenie z bazą danych
+            Database db = new Database();
+            bool czy = db.Connection();
+            if (!czy)
+                lblErrBd.Visibility = Visibility.Visible;
+            
+
             string imie, nazwisko, email,adres,login,haslo1,haslo2;
             bool sprawdzDane=true;//flaga do kontroli, czy wszystkie dane są wpisane
 
