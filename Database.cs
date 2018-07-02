@@ -15,18 +15,22 @@ namespace WPFSklep
         public bool Connection()
         { 
             bool isCorrect=true;
-
-            //"Server=localhost\sqlexpress"
             string message;
             string connectionString = null;
-            //ZŁY CONNECTIONSTRING wywala wyjatek<--------------------------------
-            connectionString = "Server= GOUDAGRMLN\\SQLEXPRESS, Authentication=Windows Authentication, Database= Konfigurator, Integrated Security=True;";
+   
+            connectionString= "Data Source=GOUDAGRMLN\\SQLEXPRESS;" +
+                              "Initial Catalog=Konfigurator;" +
+                              "Integrated Security=SSPI;";
+
+
             SqlConnection db = new SqlConnection(connectionString);
             SqlCommand komenda;
             try
             {
                 db.Open();
-                
+                //SqlCommand command = new SqlCommand(queryString, connection);
+                //command.Connection.Open();
+                //command.ExecuteNonQuery();
                 db.Close();
             }
             catch (Exception ex)
