@@ -5,16 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSklep.View"
         mc:Ignorable="d"
-         Title="Czereśnie.net" Height="396.711" Width="350">
-    <Grid Margin="0,0,3,-20">
-        <Label x:Name="label1" Content="Witamy w sklepie" HorizontalAlignment="Left" Height="29" Margin="111,39,0,0" VerticalAlignment="Top" Width="117" FontSize="14"/>
-        <Button x:Name="btnKonfigurator" Content="Konfigurator" HorizontalAlignment="Left" Height="40" Margin="55,128,0,0" VerticalAlignment="Top" Width="226" FontSize="22" FontFamily="Sitka Subheading" Click="button_Click"/>
-        <Button x:Name="btnKomputery" Content="Komputery" HorizontalAlignment="Left" Height="40" Margin="55,183,0,0" VerticalAlignment="Top" Width="226" FontSize="22" FontFamily="Sitka Subheading"/>
-        <Label x:Name="label" Content="CZEREŚNIE.NET" HorizontalAlignment="Left" Height="34" Margin="89,68,0,0" VerticalAlignment="Top" Width="161" FontSize="22"/>
-        <Button x:Name="btnKoszyk" Content="Koszyk" HorizontalAlignment="Left" Margin="55,238,0,0" VerticalAlignment="Top" Width="226" Height="40" FontSize="22" FontFamily="Sitka Subheading"/>
-        <Button x:Name="btnWyjscie" Content="Wyjście" HorizontalAlignment="Left" Height="40" Margin="55,295,0,0" VerticalAlignment="Top" Width="226" FontSize="22" FontFamily="Sitka Subheading"/>
-        <Button x:Name="btnZalogujsie" Content="Zaloguj się" HorizontalAlignment="Left" Height="20" Margin="264,4,0,0" VerticalAlignment="Top" Width="67" BorderBrush="White" Foreground="Red" Background="White" Click="btnZalogujsie_Click"/>
-        <Button x:Name="btnZarejestrujsie" Command="{Binding ExecuteCommand}" Content="Zarejestruj się" HorizontalAlignment="Left" Height="19" Margin="0,5,0,0" VerticalAlignment="Top" Width="95" Background="White" BorderBrush="White" Foreground="Red" Click="btnZarejestrujsie_Click"/>
-
-    </Grid>
+         Title="Czereśnie.net" Height="410" Width="350">
+    <Border Padding="10">
+        <StackPanel>
+            <!--Sign in & sign up btn-->
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Column="0" x:Name="btnZarejestrujsie" 
+                        Command="{Binding ExecuteCommand}" 
+                        Content="Zarejestruj się" 
+                        HorizontalAlignment="Left" Height="19" Margin="5 0 0 0 "
+                        VerticalAlignment="Top" 
+                        Background="White" BorderBrush="White" Foreground="Red"/>
+                
+                <Button Grid.Column="1" x:Name="btnZalogujsie" 
+                        Content="Zaloguj się" 
+                        HorizontalAlignment="Left" 
+                        Height="20" Margin="95 0 0 0"
+                        VerticalAlignment="Top" Width="67" 
+                        BorderBrush="White" Foreground="Red" 
+                        Background="White" Click="btnZalogujsie_Click"/>
+            </Grid>
+            <Label x:Name="label1" Content="Witamy w sklepie" 
+                   HorizontalAlignment="Center" Margin="0 20 0 0"
+                   FontSize="15"/>
+            
+            <Label x:Name="label" Content="CZEREŚNIE.NET" 
+                   HorizontalAlignment="Center" Margin="0 0 0 0"
+                   FontSize="22"/>
+    
+            <Button x:Name="btnKonfigurator" Content="Konfigurator" 
+                HorizontalAlignment="Center" Padding="9" Margin="0 5 0 3"
+                VerticalAlignment="Top" Width="220" 
+                FontSize="22" FontFamily="Sitka Subheading"/>
+           
+            <Button x:Name="btnKomputery" Content="Komputery" 
+                    HorizontalAlignment="Center" Padding="9" Margin="0 10 0 3"
+                    VerticalAlignment="Top"  FontSize="22" Width="220" 
+                    FontFamily="Sitka Subheading"/>
+            
+            <Button x:Name="btnKoszyk" Content="Koszyk" HorizontalAlignment="Center" 
+                    Padding="9" Margin="0 10 0 3" Width="220" 
+                    FontSize="22" FontFamily="Sitka Subheading"/>
+            
+            <Button x:Name="btnWyjscie" Content="Wyjście" HorizontalAlignment="Center" 
+                    Padding="9" Margin="0 10 0 3" Width="220" 
+                    FontSize="22" FontFamily="Sitka Subheading"/>
+        </StackPanel>
+    </Border>
 </Window>
