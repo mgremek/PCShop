@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFSklep.ViewModel;
 
 namespace WPFSklep
 {
@@ -23,6 +24,7 @@ namespace WPFSklep
         public Rejestracja()
         {
             InitializeComponent();
+            DataContext = new RejestracjaViewModel();
         }
 
         private void textBox3_TextChanged(object sender, TextChangedEventArgs e)
@@ -91,11 +93,7 @@ namespace WPFSklep
         }
         private void UkryjLabele()
         {
-            this.lblErrDane.Visibility = Visibility.Hidden;
-            this.lblErrEmail.Visibility = Visibility.Hidden;
-            this.lblErrHasla.Visibility = Visibility.Hidden;
-            this.lblErrHaslo.Visibility = Visibility.Hidden;
-            this.lblErrLogin.Visibility = Visibility.Hidden;
+            
         }
     }
 }
