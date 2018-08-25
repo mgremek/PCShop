@@ -56,8 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Database.cs" />
-    <Compile Include="ViewModel\CommandHandler.cs" />
+    <Compile Include="ViewModel\Command\CommandHandler.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\RejestracjaViewModel.cs" />
     <Compile Include="View\Konfigurator.xaml.cs">
       <DependentUpon>Konfigurator.xaml</DependentUpon>
     </Compile>
