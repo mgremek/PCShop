@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WPFSklep.View"
         mc:Ignorable="d"
          Title="Czereśnie.net" Height="410" Width="350">
+    
     <Border Padding="10">
         <StackPanel>
             <!--Sign in & sign up btn-->
@@ -57,4 +58,5 @@
                     FontSize="22" FontFamily="Sitka Subheading"/>
         </StackPanel>
     </Border>
+    
 </Window>

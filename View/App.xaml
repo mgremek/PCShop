@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:WPFSklep"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+       
     </Application.Resources>
+    
 </Application>
+

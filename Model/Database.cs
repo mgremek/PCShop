@@ -11,6 +11,7 @@ namespace WPFSklep
     {
         public Database()
         {
+
         }
         public bool Connection()
         { 
