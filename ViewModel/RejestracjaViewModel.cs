@@ -13,7 +13,7 @@ namespace WPFSklep.ViewModel
     class RejestracjaViewModel :INotifyPropertyChanged
     {
         public CommandHandler ExecuteCommand { get; }
-        //--------------------------
+        //--------TEXTBOXY
         private string name;
         public string Name
         {
@@ -76,11 +76,27 @@ namespace WPFSklep.ViewModel
                 }
             }
         }
+        //-------------ERROR-LABELE
+        private Visibility lblErrEmail;
+        public Visibility LblErrEmail
+        {
+            get { return lblErrEmail; }
+            set
+            {
+                lblErrEmail = value;
+            }
+        }
+
+        public Visibility LblErrDane { get; private set; }
+        public Visibility LblErrHasla { get; private set; }
+        public Visibility LblErrHaslo { get; private set; }
+        public Visibility LblErrLogin { get; private set; }
 
         //---------------------------------
         public RejestracjaViewModel()
         {
             ExecuteCommand = new CommandHandler(Execute, () => true);
+            UkryjLabele();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -88,7 +104,7 @@ namespace WPFSklep.ViewModel
         private void Execute()
         {
             
-            //UkryjLabele(); //<-ukrywa info o bledach
+            UkryjLabele(); //<-ukrywa info o bledach
 
             ////Połączenie z bazą danych
             //Database db = new Database();
@@ -113,9 +129,10 @@ namespace WPFSklep.ViewModel
             ////Sprawdzanie poprawnosci adresu email
             email = Email;
             Regex regEmail = new Regex("^[a-z][a-z0-9_]*@[a-z0-9]*.[a-z]{2,3}$");
+            if(email!=null)
             if (!regEmail.IsMatch(email))
             {
-                //this.lblErrEmail.Visibility = Visibility.Visible; *** jak ustawić visibility labela z viewModel???
+                lblErrEmail = Visibility.Visible; //*** jak ustawić visibility labela z viewModel???
                 //tbEmail.Clear();
                 //sprawdzDane = false;
             }
@@ -146,11 +163,11 @@ namespace WPFSklep.ViewModel
         }
         private void UkryjLabele()
         {
-            //lblErrDane.Visibility = Visibility.Hidden;
-            //this.lblErrEmail.Visibility = Visibility.Hidden;
-            //this.lblErrHasla.Visibility = Visibility.Hidden;
-            //this.lblErrHaslo.Visibility = Visibility.Hidden;
-            //this.lblErrLogin.Visibility = Visibility.Hidden;
+            LblErrDane = Visibility.Hidden;
+            LblErrEmail = Visibility.Collapsed;
+            LblErrHasla = Visibility.Hidden;
+            LblErrHaslo = Visibility.Hidden;
+            LblErrLogin = Visibility.Hidden;
         }
     
     }
