@@ -13,6 +13,7 @@ namespace WPFSklep.ViewModel
     class RejestracjaViewModel :INotifyPropertyChanged
     {
         public CommandHandler ExecuteCommand { get; }
+
         //--------TEXTBOXY
         private string name;
         public string Name
@@ -76,17 +77,11 @@ namespace WPFSklep.ViewModel
                 }
             }
         }
-        //-------------ERROR-LABELE
-        private Visibility lblErrEmail;
-        public Visibility LblErrEmail
-        {
-            get { return lblErrEmail; }
-            set
-            {
-                lblErrEmail = value;
-            }
-        }
+        public string Address { get; set; }
 
+        //-------------ERROR-LABELE
+        public Visibility LblErrEmail { get; private set; }
+        public Visibility LblErrBD { get; private set; }
         public Visibility LblErrDane { get; private set; }
         public Visibility LblErrHasla { get; private set; }
         public Visibility LblErrHaslo { get; private set; }
@@ -104,7 +99,7 @@ namespace WPFSklep.ViewModel
         private void Execute()
         {
             
-            UkryjLabele(); //<-ukrywa info o bledach
+            //UkryjLabele(); //<-ukrywa info o bledach
 
             ////Połączenie z bazą danych
             //Database db = new Database();
@@ -132,7 +127,7 @@ namespace WPFSklep.ViewModel
             if(email!=null)
             if (!regEmail.IsMatch(email))
             {
-                lblErrEmail = Visibility.Visible; //*** jak ustawić visibility labela z viewModel???
+                LblErrEmail = Visibility.Visible; //*** jak ustawić visibility labela z viewModel???
                 //tbEmail.Clear();
                 //sprawdzDane = false;
             }
@@ -164,10 +159,11 @@ namespace WPFSklep.ViewModel
         private void UkryjLabele()
         {
             LblErrDane = Visibility.Hidden;
-            LblErrEmail = Visibility.Collapsed;
+            LblErrEmail = Visibility.Hidden;
             LblErrHasla = Visibility.Hidden;
             LblErrHaslo = Visibility.Hidden;
             LblErrLogin = Visibility.Hidden;
+            LblErrBD = Visibility.Hidden;
         }
     
     }
