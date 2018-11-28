@@ -43,8 +43,14 @@ namespace WPFSklep
 
         private void pbHaslo1_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            //if (this.DataContext != null)
-            //{ ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).Haslo = ((PasswordBox)sender).Password; }
+        }
+
+        private void pbHaslo2_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).Haslo2 = ((PasswordBox)sender).Password; }
         }
     }
 }

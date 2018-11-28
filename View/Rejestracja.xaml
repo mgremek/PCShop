@@ -1,5 +1,6 @@
 ﻿<Window x:Class="WPFSklep.Rejestracja"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:ff="clr-namespace:WPFSklep.Model"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -71,7 +72,6 @@
                 Grid.Column="2" Margin="0,3,0,0"/>
                     <Label x:Name="lblHaslo" Content="Hasło:" HorizontalAlignment="Right"
                VerticalAlignment="Center"  Margin="0,13,0,0" RenderTransformOrigin="0.19,2.205" />
-
                     <Label x:Name="lblPotwHaslo" HorizontalAlignment="Right" Content="Potwierdź&#xA;      hasło:"   
                 Width="62" Height="43" Margin="1,8" />
 
@@ -86,17 +86,18 @@
                     VerticalAlignment="Top" Foreground="Red" FontSize="8"
                     Visibility="{Binding Path=LblErrLogin}"/>
                     <PasswordBox x:Name="pbHaslo1" Grid.Column="3" HorizontalAlignment="Center"
-                     VerticalAlignment="Top" Width="120" Height="20" Margin="0,0,0,0" PasswordChanged="pbHaslo1_PasswordChanged"/>
+                     VerticalAlignment="Top" Width="120" Height="20" Margin="0,0,0,0" PasswordChanged="pbHaslo1_PasswordChanged"
+                     ff:Psswd.BindPassword="true"/>
                     <Label x:Name="lblErrHaslo" Content="Hasło jest niepoprawne -&#xD;&#xA;min. 6 znaków" 
                     Grid.Column="3" HorizontalAlignment="Left" Margin="16,0,15,0"
                     VerticalAlignment="Center" FontSize="8" Foreground="Red" 
                     Visibility="{Binding Path=LblErrHaslo}"/>
                     <PasswordBox x:Name="pbHaslo2" HorizontalAlignment="Center" 
-                     VerticalAlignment="Top" Width="120" Height="20" Margin="16,0,15,0"/>
+                     VerticalAlignment="Top" Width="120" Height="20" Margin="16,0,15,0" PasswordChanged="pbHaslo2_PasswordChanged"/>
                     <Label x:Name="lblErrHasla" Content="Podane hasła różnią się" Grid.Column="3"
                     HorizontalAlignment="Left" Margin="16,0,15,0" VerticalAlignment="Top"
                     FontSize="8" Foreground="Red"
-                    Visibility="{Binding Path=LblErrHasla}"/>
+                    Visibility="{Binding Path=LblErrHasla}" />
                 </StackPanel>
 
             </Grid>

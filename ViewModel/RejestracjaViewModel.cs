@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.ComponentModel;
 using System.Windows;
 using System.Text.RegularExpressions;
+using System.Security;
 
 namespace WPFSklep.ViewModel
 {
@@ -98,8 +99,7 @@ namespace WPFSklep.ViewModel
 
         private void Execute()
         {
-            
-            //UkryjLabele(); //<-ukrywa info o bledach
+            bool sprawdzDane = true;//flaga do kontroli, czy wszystkie dane są wpisane
 
             ////Połączenie z bazą danych
             //Database db = new Database();
@@ -107,53 +107,73 @@ namespace WPFSklep.ViewModel
             //if (!czy)
             //    lblErrBd.Visibility = Visibility.Visible;
 
-
-            string imie, nazwisko, email, adres, login, haslo1, haslo2;
-            bool sprawdzDane = true;//flaga do kontroli, czy wszystkie dane są wpisane
+            
 
             ////imie
-            if (Name == "")
+            if (Name == "" || Name==null)
+            { 
                 sprawdzDane = false;
-            imie = Name;
+                LblErrDane = Visibility.Visible;
+            }
 
             ////nazwisko
-            if (Surname == "")
+            if (Surname == "" || Surname==null)
+            {
                 sprawdzDane = false;
-            nazwisko = Surname;
+                LblErrDane = Visibility.Visible;
+            }
 
             ////Sprawdzanie poprawnosci adresu email
-            email = Email;
             Regex regEmail = new Regex("^[a-z][a-z0-9_]*@[a-z0-9]*.[a-z]{2,3}$");
-            if(email!=null)
-            if (!regEmail.IsMatch(email))
-            {
-                LblErrEmail = Visibility.Visible; //*** jak ustawić visibility labela z viewModel???
-                //tbEmail.Clear();
-                //sprawdzDane = false;
-            }
+            if(Email!=null)
+                 if (!regEmail.IsMatch(Email))
+                 {
+                     LblErrEmail = Visibility.Visible;
+                     Email = null;
+                     sprawdzDane = false;
+                 }
+            else
+                {
+                    LblErrEmail = Visibility.Visible;
+                    Email = null;
+                    sprawdzDane = false;
+                }
+
 
             //sprawdzanie czy login juz istnieje w bazie
             //---------->to do
 
+
             //sprawdzaniee czy haslo jest prawidlowe
             Regex regPass = new Regex("^[a-z0-9]{6,}$");
-            haslo1 = Haslo;
-            if (!regPass.IsMatch(haslo1))
-            {
-                //this.lblErrHaslo.Visibility = Visibility.Visible; *** jak ustawić visibility labela z viewModel???
-                //pbHaslo1.Clear();
-                //sprawdzDane = false;
-            }
+            if(Haslo!=null)
+                if (!regPass.IsMatch(Haslo))
+                {
+                    LblErrHaslo = Visibility.Visible;
+                    Haslo = null;
+                    sprawdzDane = false;
+                }
+            else
+                {
+                    LblErrHasla = Visibility.Visible;
+                    Haslo2 = null;
+                    sprawdzDane = false;
+                }
 
             ////sprawdzanie czy hasla się zgadzają
-            haslo2 = Haslo2;
-            if (!haslo2.Equals(haslo1))
+            if (Haslo2==null || Haslo2=="")
             {
-                //    lblErrHasla.Visibility = Visibility.Visible; *** jak ustawić visibility labela z viewModel???
-                //    pbHaslo2.Clear();
-                //    sprawdzDane = false;
-                //
+                LblErrHasla = Visibility.Visible;
+                Haslo2 = null;
+                sprawdzDane = false;
             }
+            else
+                if (!Haslo.Equals(Haslo2))
+                {
+                    LblErrHasla= Visibility.Visible;
+                    Haslo2 = null;
+                    sprawdzDane = false;
+                }
 
         }
         private void UkryjLabele()
