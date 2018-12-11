@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:WPFSklep"
         xmlns:viewModel="clr-namespace:WPFSklep.ViewModel"
         mc:Ignorable="d"
-        Title="Rejestracja" Height="309.034" Width="481.25">
+        Title="Rejestracja" Height="309.034" Width="481.25"
+        WindowStartupLocation="CenterScreen">
     
     <Window.DataContext>
         <viewModel:RejestracjaViewModel/>
@@ -93,7 +94,8 @@
                     VerticalAlignment="Center" FontSize="8" Foreground="Red" 
                     Visibility="{Binding Path=LblErrHaslo}"/>
                     <PasswordBox x:Name="pbHaslo2" HorizontalAlignment="Center" 
-                     VerticalAlignment="Top" Width="120" Height="20" Margin="16,0,15,0" PasswordChanged="pbHaslo2_PasswordChanged"/>
+                     VerticalAlignment="Top" Width="120" Height="20" Margin="16,0,15,0" 
+                     PasswordChanged="pbHaslo2_PasswordChanged" ff:Psswd.BindPassword="true"/>
                     <Label x:Name="lblErrHasla" Content="Podane hasła różnią się" Grid.Column="3"
                     HorizontalAlignment="Left" Margin="16,0,15,0" VerticalAlignment="Top"
                     FontSize="8" Foreground="Red"

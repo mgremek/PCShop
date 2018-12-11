@@ -10,18 +10,25 @@ namespace WPFSklep.ViewModel
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
-        public ICommand ExecuteCommand { get; }
+        public ICommand ExecuteRejestr { get; }
+        public ICommand ExecuteLog { get; }
         public MainWindowViewModel()
         {
-            ExecuteCommand = new CommandHandler(Execute, () => true);
+            ExecuteRejestr = new CommandHandler(ExeRejestr, () => true);
+            ExecuteLog = new CommandHandler(ExeLog, () => true);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void Execute()
+        public void ExeRejestr()
         {
             Rejestracja rejestracja = new Rejestracja();
-            rejestracja.Show();
+            rejestracja.ShowDialog();
+        }
+        public void ExeLog()
+        {
+            Logowanie logowanie = new Logowanie();
+            logowanie.ShowDialog();
         }
     }
 }

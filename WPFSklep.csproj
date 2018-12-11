@@ -58,6 +58,7 @@
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\Psswd.cs" />
     <Compile Include="ViewModel\Command\CommandHandler.cs" />
+    <Compile Include="ViewModel\LogowanieViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\RejestracjaViewModel.cs" />
     <Compile Include="View\Konfigurator.xaml.cs">
