@@ -9,15 +9,15 @@
         mc:Ignorable="d"
         Title="Rejestracja" Height="309.034" Width="481.25"
         WindowStartupLocation="CenterScreen">
-    
+
     <Window.DataContext>
         <viewModel:RejestracjaViewModel/>
     </Window.DataContext>
-    
+
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </Window.Resources>
-    
+
     <Border Padding="10" >
 
         <StackPanel Width="456">
@@ -48,7 +48,7 @@
                     <Label Grid.Column="0" x:Name="lblAdres" Content="Adres:" HorizontalAlignment="Right" 
                         Margin="0,2,0,0" VerticalAlignment="Top" Height="26" Width="43"/>
                 </StackPanel>
-                
+
                 <!--Kolumna nr 1 TEXBOXY-->
                 <StackPanel Grid.Column="1" >
                     <TextBox Grid.Column="1" Text="{Binding Name}" x:Name="tbImie" HorizontalAlignment="Center" 
@@ -70,7 +70,7 @@
                 <StackPanel Grid.Column="2"  >
                     <Label x:Name="lblLogin" Content="Login:" 
                HorizontalAlignment="Right"  VerticalAlignment="Top" 
-                Grid.Column="2" Margin="0,3,0,0"/>
+                Grid.Column="2" Margin="0,3,0,0" />
                     <Label x:Name="lblHaslo" Content="Hasło:" HorizontalAlignment="Right"
                VerticalAlignment="Center"  Margin="0,13,0,0" RenderTransformOrigin="0.19,2.205" />
                     <Label x:Name="lblPotwHaslo" HorizontalAlignment="Right" Content="Potwierdź&#xA;      hasło:"   
@@ -115,13 +115,13 @@
                         <Label x:Name="lblErrDane" Content="Uzupełnij wszystkie dane" 
                         HorizontalAlignment="Center" Margin="13,5,0,-8" 
                         VerticalAlignment="Top" Foreground="Red" FontSize="9" 
-                        Visibility="{Binding Path=LblErrDane,Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                        
+                        Visibility="{Binding Path=LblErrDane}"/>
+
                         <Label x:Name="lblErrEmail" Content="Błędny adres e-mail" 
                          HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" FontSize="9" Foreground="Red" 
                          Visibility="{Binding Path=LblErrEmail, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                     </StackPanel>
-                    
+
                     <StackPanel Grid.Column="1" >
                         <Button  x:Name="btnDodajKonto" Command="{Binding ExecuteCommand}" 
                         Content="Utwórz konto" HorizontalAlignment="Center" Height="36" 

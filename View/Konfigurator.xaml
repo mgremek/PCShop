@@ -8,23 +8,37 @@
         Title="Konfigurator" Height="402.679" Width="552.679" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="424"/>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnProcesor" Grid.ColumnSpan="2" Content="Procesor" HorizontalAlignment="Left" Height="62" Margin="24,57,0,0" VerticalAlignment="Top" Width="150" FontSize="18"/>
-        <Button x:Name="btnPlyta" Grid.ColumnSpan="2" Content="Płyta główna" HorizontalAlignment="Left" Height="62" Margin="199,57,0,0" VerticalAlignment="Top" Width="150" FontSize="18"/>
-        <Button x:Name="btnRam" Grid.ColumnSpan="2" Content="RAM" HorizontalAlignment="Left" Height="62" Margin="374,57,0,0" VerticalAlignment="Top" Width="150" FontSize="18"/>
-        <Button x:Name="btnKarta" Grid.ColumnSpan="2" Content="Karta graficzna" HorizontalAlignment="Left" Height="62" Margin="24,202,0,0" VerticalAlignment="Top" Width="150" FontSize="18"/>
-        <Button x:Name="btnObudowa" Grid.ColumnSpan="2" Content="Obudowa" HorizontalAlignment="Left" Height="62" Margin="199,202,0,0" VerticalAlignment="Top" Width="150" FontSize="18"/>
-        <Button x:Name="btnZasilacz" Grid.ColumnSpan="2" Content="Zasilacz" HorizontalAlignment="Left" Height="62" Margin="374,202,0,0" VerticalAlignment="Top" Width="150" FontSize="18"/>
-        <CheckBox x:Name="cbProcesor" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Height="18" Margin="94,140,0,0" VerticalAlignment="Top" Width="26"/>
-        <CheckBox x:Name="cbPlyta" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="265,143,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbRam" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="439,140,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbKarta" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="111,281,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbObudowa" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="265,281,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbZasilacz" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="439,281,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Grid.ColumnSpan="2" Content="Koszyk" HorizontalAlignment="Left" Height="44" Margin="465,329,0,-0.2" VerticalAlignment="Top" Width="81" FontSize="20" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}"/>
-        <Button x:Name="button1" Grid.ColumnSpan="2" Content="Powrót" HorizontalAlignment="Left" Height="44" Margin="0,329,0,-0.2" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="20"/>
+        <TabControl x:Name="tabPodzespoly" HorizontalAlignment="Left" Height="352" Margin="10,10,0,0" VerticalAlignment="Top" Width="404">
+            <TabItem Header="CPU">
+                <DataGrid x:Name="dgProcki" />
+            </TabItem>
+            <TabItem Header="Płyty główne">
+                <DataGrid x:Name="ddPlyty" />
+            </TabItem>
+            <TabItem Header="RAM">
+                
+            </TabItem>
+            <TabItem Header="GPU">
+                
+            </TabItem>
+            <TabItem Header="Zasilacze">
+                
+            </TabItem>
+            <TabItem Header="Obudowy">
+                
+            </TabItem>
+            
+        </TabControl>
+        <StackPanel Grid.Column="2" >
+            <Button x:Name="btnDodaj" Content="Dodaj" Margin="10,40,10,0" Height="30"/>
+            <Button x:Name="btnUsun" Content="Usuń" Margin="10,10" Height="30" />
+
+        </StackPanel>
+
 
     </Grid>
 </Window>

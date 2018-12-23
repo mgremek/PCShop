@@ -88,6 +88,8 @@ namespace WPFSklep.ViewModel
         public Visibility LblErrHaslo { get; private set; }
         public Visibility LblErrLogin { get; private set; }
 
+        //---------------ZAMYKANIE OKNA
+        public Action CloseAction { get; set; }
         //---------------------------------
         public RejestracjaViewModel()
         {
@@ -174,7 +176,14 @@ namespace WPFSklep.ViewModel
                     Haslo2 = null;
                     sprawdzDane = false;
                 }
-
+            if(sprawdzDane==false)
+            {
+                
+            }
+            else
+            {
+                CloseAction();
+            }
         }
         private void UkryjLabele()
         {

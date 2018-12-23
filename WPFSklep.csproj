@@ -61,6 +61,7 @@
     <Compile Include="ViewModel\LogowanieViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\RejestracjaViewModel.cs" />
+    <Compile Include="ViewModel\TODO.cs" />
     <Compile Include="View\Konfigurator.xaml.cs">
       <DependentUpon>Konfigurator.xaml</DependentUpon>
     </Compile>
