@@ -35,8 +35,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,10 +68,38 @@
     </ApplicationDefinition>
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\Psswd.cs" />
+    <Compile Include="clients.cs">
+      <DependentUpon>KompyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\Command\CommandHandler.cs" />
+    <Compile Include="KompyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KompyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KompyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KompyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KompyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KompyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\KonfiguratorViewModel.cs" />
     <Compile Include="ViewModel\LogowanieViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="Manufacturers.cs">
+      <DependentUpon>KompyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Products_TEST.cs">
+      <DependentUpon>KompyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\RejestracjaViewModel.cs" />
+    <Compile Include="SubCategory.cs">
+      <DependentUpon>KompyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\TODO.cs" />
     <Compile Include="View\Konfigurator.xaml.cs">
       <DependentUpon>Konfigurator.xaml</DependentUpon>
@@ -120,16 +159,38 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <EntityDeploy Include="KompyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KompyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KompyModel.edmx.diagram">
+      <DependentUpon>KompyModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="KompyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KompyModel.edmx</DependentUpon>
+      <LastGenOutput>KompyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="KompyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KompyModel.edmx</DependentUpon>
+      <LastGenOutput>KompyModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

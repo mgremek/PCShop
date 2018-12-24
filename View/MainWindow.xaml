@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSklep.View"
+        xmlns:viewModel="clr-namespace:WPFSklep.ViewModel"
         mc:Ignorable="d"
          Title="Czereśnie.net" Height="410" Width="350"
         WindowStartupLocation="CenterScreen">
-    
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel/>
+    </Window.DataContext>
     <Border Padding="10">
         <StackPanel>
             <!--Sign in & sign up btn-->
@@ -43,7 +46,7 @@
             <Button x:Name="btnKonfigurator" Content="Konfigurator" 
                 HorizontalAlignment="Center" Padding="9" Margin="0 5 0 3"
                 VerticalAlignment="Top" Width="220" 
-                FontSize="22" FontFamily="Sitka Subheading"/>
+                FontSize="22" FontFamily="Sitka Subheading" Command="{Binding ExecuteKonf}"/>
            
             <Button x:Name="btnKomputery" Content="Komputery" 
                     HorizontalAlignment="Center" Padding="9" Margin="0 10 0 3"
@@ -56,7 +59,7 @@
             
             <Button x:Name="btnWyjscie" Content="Wyjście" HorizontalAlignment="Center" 
                     Padding="9" Margin="0 10 0 3" Width="220" 
-                    FontSize="22" FontFamily="Sitka Subheading"/>
+                    FontSize="22" FontFamily="Sitka Subheading" Command="{Binding ExecuteExit}"/>
         </StackPanel>
     </Border>
     

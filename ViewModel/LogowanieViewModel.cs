@@ -11,6 +11,8 @@ namespace WPFSklep.ViewModel
 {
     class LogowanieViewModel : INotifyPropertyChanged
     {
+        WarKonfiguratorEntities wke;
+        public Action CloseAction { get; set; }
         public CommandHandler ExecuteCommand { get; }
         public event PropertyChangedEventHandler PropertyChanged;
         public string Login { get; set; }
@@ -19,11 +21,24 @@ namespace WPFSklep.ViewModel
         public LogowanieViewModel()
         {
             ExecuteCommand = new CommandHandler(Execute, () => true);
+            wke = new WarKonfiguratorEntities();
         }
         private void Execute()
         {
             bool sprawdzDane = true;
-            //polaczenie z bazą
+            if((Pass!="" || Pass!=null )&& (Login!="" || Login!=null))
+            {
+                var login = wke.clients.Select(n => n)
+                                .Where(n => n.Login == Login)
+                                .Where(n => n.Pass == Pass)                             
+                                .ToList();
+                if (login.Count < 1) sprawdzDane = false;
+
+            }
+           if(sprawdzDane)
+            {
+                CloseAction();
+            }
             
         }
         

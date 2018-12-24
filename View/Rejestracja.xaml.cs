@@ -23,11 +23,12 @@ namespace WPFSklep
     {
         public Rejestracja()
         {
+            
             InitializeComponent();
-            //RejestracjaViewModel rvm = new RejestracjaViewModel();
+            RejestracjaViewModel rvm = new RejestracjaViewModel();
             DataContext = new RejestracjaViewModel();
-            //if (rvm.CloseAction == null)
-            //    rvm.CloseAction = new Action(this.Close);
+            if (rvm.CloseAction == null)
+                rvm.CloseAction = new Action(this.Close);
         }
 
         private void textBox3_TextChanged(object sender, TextChangedEventArgs e)

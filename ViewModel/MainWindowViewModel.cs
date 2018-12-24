@@ -10,12 +10,17 @@ namespace WPFSklep.ViewModel
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
+        public Action CloseAction { get; set; }
         public ICommand ExecuteRejestr { get; }
         public ICommand ExecuteLog { get; }
+        public ICommand ExecuteKonf { get; }
+        public ICommand ExecuteExit { get; }
         public MainWindowViewModel()
         {
             ExecuteRejestr = new CommandHandler(ExeRejestr, () => true);
             ExecuteLog = new CommandHandler(ExeLog, () => true);
+            ExecuteKonf = new CommandHandler(ExeKonf, () => true);
+            ExecuteExit = new CommandHandler(ExeExit, () => true);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -29,6 +34,15 @@ namespace WPFSklep.ViewModel
         {
             Logowanie logowanie = new Logowanie();
             logowanie.ShowDialog();
+        }
+        public void ExeKonf()
+        {
+            Konfigurator k = new Konfigurator();
+            k.ShowDialog();
+        }
+        public void ExeExit()
+        {
+            CloseAction();
         }
     }
 }

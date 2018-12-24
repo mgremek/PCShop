@@ -23,7 +23,12 @@ namespace WPFSklep.View
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
+            MainWindowViewModel mvm = new MainWindowViewModel();
+            DataContext = mvm;
+            if(mvm.CloseAction==null)
+            {
+                mvm.CloseAction = new Action(this.Close);
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e) { }

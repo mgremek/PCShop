@@ -10,7 +10,9 @@ namespace WPFSklep.ViewModel
     {
         //co jest do zrobienia
         //NIE DZIALA PIERDOLONE BINDOWANIE LABELI ERROROWYCH NIE WIEM CZMEU BO JUZ DZIAŁAŁO JPRDL
-        //baza danych, jak zrobic laczenie z baza, entity?
+        //entity dziala, jak to przeniesc do wcf??? wcf nie dziala
+        //sprawdzanie w rejestracji czy login jest w bazie
+        //cala akcja w rejestracji + bindowanie labeli kurwa mac
 
     }
 }

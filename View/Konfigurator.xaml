@@ -4,34 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSklep"
+        xmlns:viewModel="clr-namespace:WPFSklep.ViewModel"
         mc:Ignorable="d"
-        Title="Konfigurator" Height="402.679" Width="552.679" WindowStartupLocation="CenterScreen">
+        Title="Konfigurator" Height="474.679" Width="747.679" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewModel:KonfiguratorViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="424"/>
+            <ColumnDefinition Width="575"/>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabPodzespoly" HorizontalAlignment="Left" Height="352" Margin="10,10,0,0" VerticalAlignment="Top" Width="404">
+        <TabControl x:Name="tabPodzespoly" HorizontalAlignment="Left" Height="392" Margin="10,10,0,0" VerticalAlignment="Top" Width="502">
             <TabItem Header="CPU">
-                <DataGrid x:Name="dgProcki" />
+                <DataGrid x:Name="dgProcki" ItemsSource="{Binding ListaCPU}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="Płyty główne">
-                <DataGrid x:Name="ddPlyty" />
+                
+                <DataGrid x:Name="dgPlyty" ItemsSource="{Binding ListaPlyty}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="RAM">
-                
+                <DataGrid x:Name="dgRam" ItemsSource="{Binding ListaRAM}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="GPU">
-                
+                <DataGrid x:Name="dgGPU" ItemsSource="{Binding ListaGPU}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
             </TabItem>
-            <TabItem Header="Zasilacze">
-                
+            <TabItem Header="Monitory">
+                <DataGrid x:Name="dgZasilacze" ItemsSource="{Binding ListaMonitory}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="Obudowy">
-                
+                <DataGrid x:Name="dgObudowy" ItemsSource="{Binding ListaObudowy}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
             </TabItem>
-            
+
         </TabControl>
         <StackPanel Grid.Column="2" >
             <Button x:Name="btnDodaj" Content="Dodaj" Margin="10,40,10,0" Height="30"/>

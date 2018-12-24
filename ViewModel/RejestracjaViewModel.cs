@@ -13,8 +13,8 @@ namespace WPFSklep.ViewModel
 {
     class RejestracjaViewModel :INotifyPropertyChanged
     {
-        public CommandHandler ExecuteCommand { get; }
-
+        WarKonfiguratorEntities wke;
+        public CommandHandler ExecuteCommand { get; }    
         //--------TEXTBOXY
         private string name;
         public string Name
@@ -26,7 +26,7 @@ namespace WPFSklep.ViewModel
                 if (!string.Equals(this.name, value))
                 {
                     this.name = value;
-                    //this.RaisePropertyChanged(); // Method to raise the PropertyChanged event in your BaseViewModel class...
+                    //this.PropertyChanged(Name); // Method to raise the PropertyChanged event in your BaseViewModel class...
                 }
             }
         }
@@ -79,6 +79,13 @@ namespace WPFSklep.ViewModel
             }
         }
         public string Address { get; set; }
+        private string login;
+        public string Login
+        {
+            get { return login; }
+            set { login = value; }
+        }
+
 
         //-------------ERROR-LABELE
         public Visibility LblErrEmail { get; private set; }
@@ -87,6 +94,7 @@ namespace WPFSklep.ViewModel
         public Visibility LblErrHasla { get; private set; }
         public Visibility LblErrHaslo { get; private set; }
         public Visibility LblErrLogin { get; private set; }
+        public bool lblErrDane1 { get; set; }
 
         //---------------ZAMYKANIE OKNA
         public Action CloseAction { get; set; }
@@ -95,6 +103,7 @@ namespace WPFSklep.ViewModel
         {
             ExecuteCommand = new CommandHandler(Execute, () => true);
             UkryjLabele();
+            wke = new WarKonfiguratorEntities();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -116,6 +125,7 @@ namespace WPFSklep.ViewModel
             { 
                 sprawdzDane = false;
                 LblErrDane = Visibility.Visible;
+                lblErrDane1 = true;
             }
 
             ////nazwisko
@@ -131,7 +141,7 @@ namespace WPFSklep.ViewModel
                  if (!regEmail.IsMatch(Email))
                  {
                      LblErrEmail = Visibility.Visible;
-                     Email = null;
+                     Email = "";
                      sprawdzDane = false;
                  }
             else
@@ -193,6 +203,7 @@ namespace WPFSklep.ViewModel
             LblErrHaslo = Visibility.Hidden;
             LblErrLogin = Visibility.Hidden;
             LblErrBD = Visibility.Hidden;
+            lblErrDane1 = false;
         }
     
     }

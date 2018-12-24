@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFSklep.ViewModel;
 
 namespace WPFSklep
 {
@@ -22,6 +23,10 @@ namespace WPFSklep
         public Logowanie()
         {
             InitializeComponent();
+            LogowanieViewModel lvm = new LogowanieViewModel();
+            DataContext = lvm;
+            if (lvm.CloseAction == null)
+                lvm.CloseAction = new Action(this.Close);
         }
 
         private void pbHaslo_PasswordChanged(object sender, RoutedEventArgs e)
