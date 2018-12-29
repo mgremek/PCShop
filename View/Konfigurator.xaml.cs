@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFSklep.ViewModel;
 
 namespace WPFSklep
 {
@@ -22,6 +23,13 @@ namespace WPFSklep
         public Konfigurator()
         {
             InitializeComponent();
+            KonfiguratorViewModel kvm = new KonfiguratorViewModel();
+            DataContext = kvm;
+            if (kvm.CloseAction == null)
+            {
+                kvm.CloseAction = new Action(this.Close);
+
+            }
         }
     }
 }

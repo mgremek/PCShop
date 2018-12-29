@@ -153,7 +153,18 @@ namespace WPFSklep.ViewModel
 
 
             //sprawdzanie czy login juz istnieje w bazie
-            //---------->to do
+            if(Login!="" || Login!=null)
+            {
+                var lista=wke.clients.Select(n => n)
+                                     .Where(n => n.Login == Login)
+                                     .ToList();
+                if(lista.Count>0)
+                {
+                    Login = "";
+                    sprawdzDane = false;
+                    LblErrLogin = Visibility.Visible;
+                }
+            }
 
 
             //sprawdzaniee czy haslo jest prawidlowe

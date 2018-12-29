@@ -41,6 +41,7 @@
         <StackPanel Grid.Column="2" >
             <Button x:Name="btnDodaj" Content="Dodaj" Margin="10,40,10,0" Height="30"/>
             <Button x:Name="btnUsun" Content="Usuń" Margin="10,10" Height="30" />
+            <Button x:Name="btnPowrot" Content="Powrot" Margin="10,280,10,0" Height="28" Command="{Binding ExecuteExit}"/>
 
         </StackPanel>
 

@@ -10,6 +10,7 @@ namespace WPFSklep.ViewModel
 {
     class KonfiguratorViewModel : INotifyPropertyChanged
     {
+        public Action CloseAction { get; set; }
         WarKonfiguratorEntities wke;
         public CommandHandler ExecuteCommand { get; }
         public ObservableCollection<Products_TEST> ListaCPU { get; set; }
@@ -18,6 +19,7 @@ namespace WPFSklep.ViewModel
         public ObservableCollection<Products_TEST> ListaRAM { get; set; }
         public ObservableCollection<Products_TEST> ListaMonitory { get; set; }
         public ObservableCollection<Products_TEST> ListaObudowy { get; set; }
+        public CommandHandler ExecuteExit { get; private set; }
 
         private List<Products_TEST> listaProduktow;
         public KonfiguratorViewModel()
@@ -30,7 +32,8 @@ namespace WPFSklep.ViewModel
             ListaPlyty = new ObservableCollection<Products_TEST>(GetPlyty());
             ListaRAM = new ObservableCollection<Products_TEST>(GetRAM());
             ListaMonitory = new ObservableCollection<Products_TEST>(GetMonitor());
-            ListaObudowy = new ObservableCollection<Products_TEST>(GetObudowa());   
+            ListaObudowy = new ObservableCollection<Products_TEST>(GetObudowa());
+            ExecuteExit = new CommandHandler(ExeExit, () => true);
         }
         //GET_CZESC
         #region
@@ -72,6 +75,10 @@ namespace WPFSklep.ViewModel
         public void Execute()
         {
 
+        }
+        private void ExeExit()
+        {
+            CloseAction();
         }
     }
 }

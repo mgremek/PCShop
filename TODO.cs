@@ -13,6 +13,8 @@ namespace WPFSklep.ViewModel
         //entity dziala, jak to przeniesc do wcf??? wcf nie dziala
         //sprawdzanie w rejestracji czy login jest w bazie
         //cala akcja w rejestracji + bindowanie labeli kurwa mac
+        //wątki przy otwieraniu konfiguratora i logowaniu się???
+        //cos nie rabotajet, nie da sie w nowym watku otworzyc formularza bo musi byc otwierany z watku STA, (DISPATCHER)
 
     }
 }
