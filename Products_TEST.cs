@@ -24,4 +24,17 @@ namespace WPFSklep
         public virtual Manufacturers Manufacturers { get; set; }
         public virtual SubCategory SubCategory { get; set; }
     }
+    public partial class Products
+    {
+        public int ProdID { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public int SubID { get; set; }
+        public int ManID { get; set; }
+        public string Model { get; set; }
+       // public string Specification { get; set; }
+
+        public virtual Manufacturers Manufacturers { get; set; }
+        public virtual SubCategory SubCategory { get; set; }
+    }
+
 }

@@ -26,16 +26,28 @@ namespace WPFSklep.ViewModel
         private void Execute()
         {
             bool sprawdzDane = true;
-            if((Pass!="" || Pass!=null )&& (Login!="" || Login!=null))
+            Parallel.Invoke(() =>
             {
-                var login = wke.clients.Select(n => n)
-                                .Where(n => n.Login == Login)
-                                .Where(n => n.Pass == Pass)                             
-                                .ToList();
-                if (login.Count < 1) sprawdzDane = false;
+                //if ((Pass != "" || Pass != null) && (Login != "" || Login != null))
+                //{
+                //    var login = wke.clients.Select(n => n)
+                //                    .Where(n => n.Login == Login)
+                //                    .Where(n => n.Pass == Pass)
+                //                    .ToList();
+                //    if (login.Count < 1) sprawdzDane = false;
 
+                //}
+                if ((Pass != "" || Pass != null) && (Login != "" || Login != null))
+                { 
+                    var i = (from c in wke.clients
+                             where c.Login == Login
+                             where c.Pass==Pass
+                             select c.client_ID).FirstOrDefault();
+                   // if (i) sprawdzDane = false;
+                }
             }
-           if(sprawdzDane)
+            );
+           if (sprawdzDane)
             {
                 CloseAction();
             }

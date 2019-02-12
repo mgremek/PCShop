@@ -41,19 +41,12 @@ namespace WPFSklep.ViewModel
         }
         public void ExeKonf()
         {
-            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new NextPrimeDelegate(ConfigThread));
-            //Thread t = new Thread(ConfigThread);
-
-            //t.Start();
+            Konfigurator k = new Konfigurator();
+            k.ShowDialog();
         }
         public void ExeExit()
         {
             CloseAction();
-        }
-        private void ConfigThread()
-        {
-            Konfigurator k = new Konfigurator();
-            k.ShowDialog();
         }
     }
 }

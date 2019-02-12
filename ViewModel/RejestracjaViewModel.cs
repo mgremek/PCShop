@@ -118,8 +118,6 @@ namespace WPFSklep.ViewModel
             //if (!czy)
             //    lblErrBd.Visibility = Visibility.Visible;
 
-            
-
             ////imie
             if (Name == "" || Name==null)
             { 

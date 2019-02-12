@@ -29,5 +29,6 @@ namespace WPFSklep
         public virtual DbSet<Manufacturers> Manufacturers { get; set; }
         public virtual DbSet<Products_TEST> Products_TEST { get; set; }
         public virtual DbSet<SubCategory> SubCategory { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
     }
 }
