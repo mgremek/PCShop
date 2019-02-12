@@ -1,3 +1,0 @@
-1. klasa do obsługi bazy
-- w srodku sqlconnection
-2. WinForm->WPF
