@@ -37,4 +37,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetGpu">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGpuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetGpuResult" nillable="true" type="q4:ArrayOfProducts_TEST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

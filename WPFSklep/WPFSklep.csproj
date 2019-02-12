@@ -43,6 +43,12 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ProduktyService">
+      <HintPath>..\..\WCFService\Kliencik\bin\Debug\ProduktyService.dll</HintPath>
+    </Reference>
+    <Reference Include="ProduktyService2">
+      <HintPath>..\..\WCFService\Kliencik\bin\Debug\ProduktyService2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -175,16 +181,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF\ProduktyService.wsdl" />
-    <None Include="Connected Services\WCF\WPFSklep.WCF.Manufacturers.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\WCF\WPFSklep.WCF.Products_TEST.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\WCF\WPFSklep.WCF.SubCategory.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ProduktyService.Manufacturers.datasource" />
+    <None Include="Properties\DataSources\ProduktyService.Products_TEST.datasource" />
+    <None Include="Properties\DataSources\ProduktyService.SubCategory.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

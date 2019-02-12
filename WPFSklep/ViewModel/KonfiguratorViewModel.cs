@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace WPFSklep.ViewModel
 {
     class KonfiguratorViewModel : INotifyPropertyChanged
@@ -15,8 +16,8 @@ namespace WPFSklep.ViewModel
         public Action CloseAction { get; set; }
         WarKonfiguratorEntities wke;
         public CommandHandler ExecuteCommand { get; }
-        public ObservableCollection<WCF.Products_TEST> ListaCPU { get; set; }
-        public ObservableCollection<WCF.Products_TEST> ListaGPU { get; set; }
+        public ObservableCollection<ProduktyService.Products_TEST> ListaCPU { get; set; }
+        public ObservableCollection<ProduktyService.Products_TEST> ListaGPU { get; set; }
         public ObservableCollection<Products_TEST> ListaPlyty { get; set; }
         public ObservableCollection<Products_TEST> ListaRAM { get; set; }
         public ObservableCollection<Products_TEST> ListaMonitory { get; set; }
@@ -34,7 +35,8 @@ namespace WPFSklep.ViewModel
             //ListaCPU = new ObservableCollection<Products_TEST>(GetCPU());
 
             //Thread t2 = new Thread(() => ListaCPU = new ObservableCollection<WCF.Products_TEST>(GetCPU()));
-            ListaCPU = new ObservableCollection<WCF.Products_TEST>(GetCPU());
+            ListaCPU = new ObservableCollection<ProduktyService.Products_TEST>(GetCPU());
+            ListaGPU = new ObservableCollection<ProduktyService.Products_TEST>(GetGPU());
             //t2.Start();
             //Thread t1 = new Thread(() => ListaGPU = new ObservableCollection<WCF.Products_TEST>(GetGPU()));
             //t1.Start();
@@ -47,10 +49,10 @@ namespace WPFSklep.ViewModel
         }
         //GET_CZESC
         #region
-        private List<WCF.Products_TEST> GetCPU()
+        private List<ProduktyService.Products_TEST> GetCPU()
         {
             var prod=pc.GetProdukty().ToList();
-            List<WCF.Products_TEST> query = new List<WCF.Products_TEST>();
+            List<ProduktyService.Products_TEST> query = new List<ProduktyService.Products_TEST>();
             // Parallel.Invoke(() => { query = listaProduktow.Select(n => n).Where(a => a.SubID == 1).ToList(); });
             query = prod.Select(n => n).Where(n => n.SubID == 1).ToList();
             return query;
@@ -69,10 +71,13 @@ namespace WPFSklep.ViewModel
         //                  select new PersonInformation { Name = a.Name, Age = a.Age }).ToList();
         //    //return qry.ToList<Products>();
         //}
-        private List<WCF.Products_TEST> GetGPU()
+        private List<ProduktyService.Products_TEST> GetGPU()
         {
             WCF.ProduktyClient c = new WCF.ProduktyClient();
+            return c.GetGpu().Take(20).ToList();
 
+
+            /*
             var ptest = c.GetProdukty().ToList();
             List<WCF.Products_TEST> query = new List<WCF.Products_TEST>();
             //Parallel.Invoke(() =>query = listaProduktow.Select(n => n).Where(a => a.SubID == 2).ToList<Products_TEST>());
@@ -83,6 +88,7 @@ namespace WPFSklep.ViewModel
             //WCF.ProduktyClient c = new WCF.ProduktyClient();
             //var ptest = c.GetProdukty().ToList<WPFSklep.Products_TEST>();
             //return ptest;
+            */
         }
         private List<Products_TEST> GetPlyty()
         {

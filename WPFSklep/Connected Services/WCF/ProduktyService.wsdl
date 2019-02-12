@@ -25,6 +25,12 @@
   <wsdl:message name="IProdukty_GetSubcategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSubcategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IProdukty_GetGpu_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGpu" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetGpu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGpuResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProdukty">
     <wsdl:operation name="GetProdukty">
       <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetProdukty" message="tns:IProdukty_GetProdukty_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="GetSubcategory">
       <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetSubcategory" message="tns:IProdukty_GetSubcategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetSubcategoryResponse" message="tns:IProdukty_GetSubcategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGpu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetGpu" message="tns:IProdukty_GetGpu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetGpuResponse" message="tns:IProdukty_GetGpu_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProdukty" type="tns:IProdukty">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSubcategory">
       <soap:operation soapAction="http://tempuri.org/IProdukty/GetSubcategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGpu">
+      <soap:operation soapAction="http://tempuri.org/IProdukty/GetGpu" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
