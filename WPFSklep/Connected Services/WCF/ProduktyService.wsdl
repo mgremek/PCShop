@@ -31,6 +31,36 @@
   <wsdl:message name="IProdukty_GetGpu_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetGpuResponse" />
   </wsdl:message>
+  <wsdl:message name="IProdukty_GetMonitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonitor" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetMonitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetRam_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRam" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetRam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCase" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetMotherboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMotherboard" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetMotherboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMotherboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetProc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProc" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetProc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProcResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProdukty">
     <wsdl:operation name="GetProdukty">
       <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetProdukty" message="tns:IProdukty_GetProdukty_InputMessage" />
@@ -47,6 +77,26 @@
     <wsdl:operation name="GetGpu">
       <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetGpu" message="tns:IProdukty_GetGpu_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetGpuResponse" message="tns:IProdukty_GetGpu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetMonitor" message="tns:IProdukty_GetMonitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetMonitorResponse" message="tns:IProdukty_GetMonitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetRam" message="tns:IProdukty_GetRam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetRamResponse" message="tns:IProdukty_GetRam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetCase" message="tns:IProdukty_GetCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetCaseResponse" message="tns:IProdukty_GetCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMotherboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetMotherboard" message="tns:IProdukty_GetMotherboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetMotherboardResponse" message="tns:IProdukty_GetMotherboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetProc" message="tns:IProdukty_GetProc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetProcResponse" message="tns:IProdukty_GetProc_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProdukty" type="tns:IProdukty">
@@ -80,6 +130,51 @@
     </wsdl:operation>
     <wsdl:operation name="GetGpu">
       <soap:operation soapAction="http://tempuri.org/IProdukty/GetGpu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitor">
+      <soap:operation soapAction="http://tempuri.org/IProdukty/GetMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRam">
+      <soap:operation soapAction="http://tempuri.org/IProdukty/GetRam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCase">
+      <soap:operation soapAction="http://tempuri.org/IProdukty/GetCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMotherboard">
+      <soap:operation soapAction="http://tempuri.org/IProdukty/GetMotherboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProc">
+      <soap:operation soapAction="http://tempuri.org/IProdukty/GetProc" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

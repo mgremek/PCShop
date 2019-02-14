@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <TabControl x:Name="tabPodzespoly" HorizontalAlignment="Left" Height="392" Margin="10,10,0,0" VerticalAlignment="Top" Width="502">
             <TabItem Header="CPU">
-                <DataGrid x:Name="dgProcki" ItemsSource="{Binding ListaCPU}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
+                <DataGrid x:Name="dgProcki" ItemsSource="{Binding ListaCPU}" SelectedItem="ProduktyService.PRODUCT_TEST" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="Płyty główne">
                 

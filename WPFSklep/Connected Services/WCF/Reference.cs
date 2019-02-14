@@ -9,17 +9,128 @@
 //------------------------------------------------------------------------------
 
 namespace WPFSklep.WCF {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Products", Namespace="http://schemas.datacontract.org/2004/07/ProduktyService")]
+    [System.SerializableAttribute()]
+    public partial class Products : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ManufacturerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProdIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpecificationField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Manufacturer {
+            get {
+                return this.ManufacturerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManufacturerField, value) != true)) {
+                    this.ManufacturerField = value;
+                    this.RaisePropertyChanged("Manufacturer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Model {
+            get {
+                return this.ModelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelField, value) != true)) {
+                    this.ModelField = value;
+                    this.RaisePropertyChanged("Model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProdID {
+            get {
+                return this.ProdIDField;
+            }
+            set {
+                if ((this.ProdIDField.Equals(value) != true)) {
+                    this.ProdIDField = value;
+                    this.RaisePropertyChanged("ProdID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Specification {
+            get {
+                return this.SpecificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecificationField, value) != true)) {
+                    this.SpecificationField = value;
+                    this.RaisePropertyChanged("Specification");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCF.IProdukty")]
     public interface IProdukty {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetProdukty", ReplyAction="http://tempuri.org/IProdukty/GetProduktyResponse")]
-        ProduktyService.Products_TEST[] GetProdukty();
+        WPFSklep.WCF.Products[] GetProdukty(int subId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetProdukty", ReplyAction="http://tempuri.org/IProdukty/GetProduktyResponse")]
-        System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetProduktyAsync();
+        System.Threading.Tasks.Task<WPFSklep.WCF.Products[]> GetProduktyAsync(int subId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetManufacturers", ReplyAction="http://tempuri.org/IProdukty/GetManufacturersResponse")]
         ProduktyService.Manufacturers[] GetManufacturers();
@@ -38,6 +149,36 @@ namespace WPFSklep.WCF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetGpu", ReplyAction="http://tempuri.org/IProdukty/GetGpuResponse")]
         System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetGpuAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetMonitor", ReplyAction="http://tempuri.org/IProdukty/GetMonitorResponse")]
+        ProduktyService.Products_TEST[] GetMonitor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetMonitor", ReplyAction="http://tempuri.org/IProdukty/GetMonitorResponse")]
+        System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetMonitorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetRam", ReplyAction="http://tempuri.org/IProdukty/GetRamResponse")]
+        ProduktyService.Products_TEST[] GetRam();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetRam", ReplyAction="http://tempuri.org/IProdukty/GetRamResponse")]
+        System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetRamAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetCase", ReplyAction="http://tempuri.org/IProdukty/GetCaseResponse")]
+        ProduktyService.Products_TEST[] GetCase();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetCase", ReplyAction="http://tempuri.org/IProdukty/GetCaseResponse")]
+        System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetCaseAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetMotherboard", ReplyAction="http://tempuri.org/IProdukty/GetMotherboardResponse")]
+        ProduktyService.Products_TEST[] GetMotherboard();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetMotherboard", ReplyAction="http://tempuri.org/IProdukty/GetMotherboardResponse")]
+        System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetMotherboardAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetProc", ReplyAction="http://tempuri.org/IProdukty/GetProcResponse")]
+        WPFSklep.WCF.Products[] GetProc();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetProc", ReplyAction="http://tempuri.org/IProdukty/GetProcResponse")]
+        System.Threading.Tasks.Task<WPFSklep.WCF.Products[]> GetProcAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -67,12 +208,12 @@ namespace WPFSklep.WCF {
                 base(binding, remoteAddress) {
         }
         
-        public ProduktyService.Products_TEST[] GetProdukty() {
-            return base.Channel.GetProdukty();
+        public WPFSklep.WCF.Products[] GetProdukty(int subId) {
+            return base.Channel.GetProdukty(subId);
         }
         
-        public System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetProduktyAsync() {
-            return base.Channel.GetProduktyAsync();
+        public System.Threading.Tasks.Task<WPFSklep.WCF.Products[]> GetProduktyAsync(int subId) {
+            return base.Channel.GetProduktyAsync(subId);
         }
         
         public ProduktyService.Manufacturers[] GetManufacturers() {
@@ -97,6 +238,46 @@ namespace WPFSklep.WCF {
         
         public System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetGpuAsync() {
             return base.Channel.GetGpuAsync();
+        }
+        
+        public ProduktyService.Products_TEST[] GetMonitor() {
+            return base.Channel.GetMonitor();
+        }
+        
+        public System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetMonitorAsync() {
+            return base.Channel.GetMonitorAsync();
+        }
+        
+        public ProduktyService.Products_TEST[] GetRam() {
+            return base.Channel.GetRam();
+        }
+        
+        public System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetRamAsync() {
+            return base.Channel.GetRamAsync();
+        }
+        
+        public ProduktyService.Products_TEST[] GetCase() {
+            return base.Channel.GetCase();
+        }
+        
+        public System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetCaseAsync() {
+            return base.Channel.GetCaseAsync();
+        }
+        
+        public ProduktyService.Products_TEST[] GetMotherboard() {
+            return base.Channel.GetMotherboard();
+        }
+        
+        public System.Threading.Tasks.Task<ProduktyService.Products_TEST[]> GetMotherboardAsync() {
+            return base.Channel.GetMotherboardAsync();
+        }
+        
+        public WPFSklep.WCF.Products[] GetProc() {
+            return base.Channel.GetProc();
+        }
+        
+        public System.Threading.Tasks.Task<WPFSklep.WCF.Products[]> GetProcAsync() {
+            return base.Channel.GetProcAsync();
         }
     }
 }

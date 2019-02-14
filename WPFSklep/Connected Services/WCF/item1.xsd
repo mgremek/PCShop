@@ -3,13 +3,15 @@
   <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ProduktyService2/Service1/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProduktyService" />
   <xs:element name="GetProdukty">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="subId" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProduktyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetProduktyResult" nillable="true" type="q1:ArrayOfProducts_TEST" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetProduktyResult" nillable="true" type="q1:ArrayOfProducts" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -46,6 +48,66 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetGpuResult" nillable="true" type="q4:ArrayOfProducts_TEST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonitor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonitorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetMonitorResult" nillable="true" type="q5:ArrayOfProducts_TEST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRam">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetRamResult" nillable="true" type="q6:ArrayOfProducts_TEST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCase">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetCaseResult" nillable="true" type="q7:ArrayOfProducts_TEST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMotherboard">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMotherboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetMotherboardResult" nillable="true" type="q8:ArrayOfProducts_TEST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProc">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ProduktyService" minOccurs="0" name="GetProcResult" nillable="true" type="q9:ArrayOfProducts" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
