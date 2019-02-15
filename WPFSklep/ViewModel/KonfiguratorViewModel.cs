@@ -17,12 +17,12 @@ namespace WPFSklep.ViewModel
         public Action CloseAction { get; set; }
         
         public CommandHandler ExecuteCommand { get; }
-        public ObservableCollection<WCF.Products> ListaCPU { get; set; }
-        public ObservableCollection<WCF.Products> ListaGPU { get; set; }
-        public ObservableCollection<WCF.Products> ListaPlyty { get; set; }
-        public ObservableCollection<WCF.Products> ListaRAM { get; set; }
-        public ObservableCollection<WCF.Products> ListaMonitory { get; set; }
-        public ObservableCollection<WCF.Products> ListaObudowy { get; set; }
+        public ObservableCollection<ProduktyService.Products> ListaCPU { get; set; }
+        public ObservableCollection<ProduktyService.Products> ListaGPU { get; set; }
+        public ObservableCollection<ProduktyService.Products> ListaPlyty { get; set; }
+        public ObservableCollection<ProduktyService.Products> ListaRAM { get; set; }
+        public ObservableCollection<ProduktyService.Products> ListaMonitory { get; set; }
+        public ObservableCollection<ProduktyService.Products> ListaObudowy { get; set; }
         public CommandHandler ExecuteExit { get; private set; }
 
         public KonfiguratorViewModel()
@@ -31,12 +31,12 @@ namespace WPFSklep.ViewModel
             ExecuteCommand = new CommandHandler(Execute, () => true);
             //Parallel.Invoke(() => listaProduktow=wke.Products_TEST.ToList());
             //Thread t2 = new Thread(() => ListaCPU = new ObservableCollection<WCF.Products_TEST>(GetCPU()));
-            ListaCPU = new ObservableCollection<WCF.Products>(GetProducts(1));
-            ListaGPU = new ObservableCollection<WCF.Products>(GetProducts(2));
-            ListaRAM = new ObservableCollection<WCF.Products>(GetProducts(3));
-            ListaPlyty = new ObservableCollection<WCF.Products>(GetProducts(4));
-            ListaMonitory = new ObservableCollection<WCF.Products>(GetProducts(9));
-            ListaObudowy = new ObservableCollection<WCF.Products>(GetProducts(7));
+            ListaCPU = new ObservableCollection<ProduktyService.Products>(GetProducts(1));
+            ListaGPU = new ObservableCollection<ProduktyService.Products>(GetProducts(2));
+            ListaRAM = new ObservableCollection<ProduktyService.Products>(GetProducts(3));
+            ListaPlyty = new ObservableCollection<ProduktyService.Products>(GetProducts(4));
+            ListaMonitory = new ObservableCollection<ProduktyService.Products>(GetProducts(9));
+            ListaObudowy = new ObservableCollection<ProduktyService.Products>(GetProducts(7));
             //t2.Start();
             //Thread t1 = new Thread(() => ListaGPU = new ObservableCollection<WCF.Products_TEST>(GetGPU()));
             //t1.Start();
@@ -44,9 +44,9 @@ namespace WPFSklep.ViewModel
         }
         //GET_CZESC
         #region
-        private List<WPFSklep.WCF.Products> GetProducts(int SubId)
+        private List<ProduktyService.Products> GetProducts(int SubId)
         {
-            return pc.GetProdukty(SubId).ToList<WCF.Products>();
+            return pc.GetProdukty(SubId).ToList<ProduktyService.Products>();
         }
 
         //private List<ProduktyService.Products_TEST> GetGPU()

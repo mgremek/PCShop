@@ -11,7 +11,7 @@ namespace WPFSklep.ViewModel
 {
     class LogowanieViewModel : INotifyPropertyChanged
     {
-        WarKonfiguratorEntities wke;
+        WCF.ProduktyClient wcf;
         public Action CloseAction { get; set; }
         public CommandHandler ExecuteCommand { get; }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -21,35 +21,18 @@ namespace WPFSklep.ViewModel
         public LogowanieViewModel()
         {
             ExecuteCommand = new CommandHandler(Execute, () => true);
-            wke = new WarKonfiguratorEntities();
+            wcf = new WCF.ProduktyClient();
         }
         private void Execute()
         {
-            bool sprawdzDane = true;
-            Parallel.Invoke(() =>
-            {
-                //if ((Pass != "" || Pass != null) && (Login != "" || Login != null))
-                //{
-                //    var login = wke.clients.Select(n => n)
-                //                    .Where(n => n.Login == Login)
-                //                    .Where(n => n.Pass == Pass)
-                //                    .ToList();
-                //    if (login.Count < 1) sprawdzDane = false;
-
-                //}
-                if ((Pass != "" || Pass != null) && (Login != "" || Login != null))
-                { 
-                    var i = (from c in wke.clients
-                             where c.Login == Login
-                             where c.Pass==Pass
-                             select c.client_ID).FirstOrDefault();
-                   // if (i) sprawdzDane = false;
-                }
-            }
-            );
-           if (sprawdzDane)
+            
+           if (wcf.IsLogged(Pass,Login))
             {
                 CloseAction();
+            }
+           else
+            {
+                // pokaz labele o zlym hasle
             }
             
         }
