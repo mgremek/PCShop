@@ -10,19 +10,16 @@ namespace WPFSklep.ViewModel
     {
         //co jest do zrobienia
         //NIE DZIALA BINDOWANIE LABELI ERROROWYCH NIE WIEM CZMEU BO JUZ DZIAŁAŁO JPRDL
-        //entity dziala, jak to przeniesc do wcf??? wcf nie dziala
-        //sprawdzanie w rejestracji czy login jest w bazie - DZIALA
         //cala akcja w rejestracji + bindowanie labeli nie dzialajace!!!!!!!!!!!!!!!
+        ///////////////////////////
+        // dodany nowy window z detailsami produktu, zrobic zeby tam wrzucało xmla sformatowanego dla kazdego produktu, czyli:
+        // dodac viewmodel dla windowsa, podbindowac text z textblocka, dodac formatowanie xmla, ustawic, podbindowac przyciski na konfiguratorze do viewmodelu
+        /////////////////////////////
         //wątki przy otwieraniu konfiguratora i logowaniu się???
         //cos nie rabotajet, nie da sie w nowym watku otworzyc formularza bo musi byc otwierany z watku STA, (DISPATCHER)
 
         // w kosntruktorze zrobic getcpu w tasku
         // asynchroniczne metody z await
-
-        // zmienic zeby pobieral do listy produkty z wcf uzywajac tego co na dole
-        
-        //WCF.ProduktyClient c = new WCF.ProduktyClient();
-        //var ptest = c.GetProduktyAsync();
 
         // Service1.cs w produktyService metoda GetProdukty() poprawić zeby pobieral nazwe subcategorii i odpowiednie kolmuny, zrobic tak dla reszty
 

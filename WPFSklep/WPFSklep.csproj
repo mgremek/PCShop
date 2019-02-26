@@ -123,6 +123,9 @@
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProdDetails.xaml.cs">
+      <DependentUpon>ProdDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Rejestracja.xaml.cs">
       <DependentUpon>Rejestracja.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
     </Compile>
     <Compile Include="Model\KartaGraficzna.cs" />
     <Page Include="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProdDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
