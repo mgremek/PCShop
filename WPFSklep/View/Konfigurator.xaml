@@ -16,9 +16,11 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabPodzespoly" HorizontalAlignment="Left" Height="425" Margin="10,10,0,0" VerticalAlignment="Top" Width="555">
+        <TabControl x:Name="tabPodzespoly" HorizontalAlignment="Left" Height="425" Margin="10,10,0,0" VerticalAlignment="Top" 
+                    Width="555" >
             <TabItem Header="CPU">
-                <DataGrid x:Name="dgProcki" ItemsSource="{Binding ListaCPU}" SelectedItem="ProduktyService.PRODUCT_TEST" Margin="0,0,-4.4,-32"/>
+                <DataGrid x:Name="dgProcki" ItemsSource="{Binding ListaCPU}"  Margin="0,0,-4.4,1.6" 
+                          SelectedItem="{Binding ProductActive}"/>
             </TabItem>
             <TabItem Header="Płyty główne">
                 
@@ -39,9 +41,10 @@
 
         </TabControl>
         <StackPanel Grid.Column="2" >
-            <Button x:Name="btnDodaj" Content="Dodaj" Margin="10,40,10,0" Height="30"/>
+            <Button x:Name="btnDetails" Content="Szczegóły"  Margin="10,30,10,0" Height="30" Command="{Binding ExecuteDetails}"/>
+            <Button x:Name="btnDodaj" Content="Dodaj" Margin="10,20,10,0" Height="30"/>
             <Button x:Name="btnUsun" Content="Usuń" Margin="10,10" Height="30" />
-            <Button x:Name="btnPowrot" Content="Powrot" Margin="10,280,10,0" Height="28" Command="{Binding ExecuteExit}"/>
+            <Button x:Name="btnPowrot" Content="Powrot" Margin="10,250,10,0" Height="28" Command="{Binding ExecuteExit}"/>
 
         </StackPanel>
 

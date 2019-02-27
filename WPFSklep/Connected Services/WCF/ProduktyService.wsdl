@@ -31,6 +31,12 @@
   <wsdl:message name="IProdukty_IsLogged_OutputMessage">
     <wsdl:part name="parameters" element="tns:IsLoggedResponse" />
   </wsdl:message>
+  <wsdl:message name="IProdukty_GetXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXml" />
+  </wsdl:message>
+  <wsdl:message name="IProdukty_GetXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXmlResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProdukty">
     <wsdl:operation name="GetProdukty">
       <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetProdukty" message="tns:IProdukty_GetProdukty_InputMessage" />
@@ -47,6 +53,10 @@
     <wsdl:operation name="IsLogged">
       <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/IsLogged" message="tns:IProdukty_IsLogged_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/IsLoggedResponse" message="tns:IProdukty_IsLogged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXml">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdukty/GetXml" message="tns:IProdukty_GetXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdukty/GetXmlResponse" message="tns:IProdukty_GetXml_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProdukty" type="tns:IProdukty">
@@ -80,6 +90,15 @@
     </wsdl:operation>
     <wsdl:operation name="IsLogged">
       <soap:operation soapAction="http://tempuri.org/IProdukty/IsLogged" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXml">
+      <soap:operation soapAction="http://tempuri.org/IProdukty/GetXml" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

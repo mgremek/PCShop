@@ -13,7 +13,7 @@ namespace WPFSklep.ViewModel
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
-        public delegate void NextPrimeDelegate(); // delegat do Dispatchera
+        //public delegate void NextPrimeDelegate(); // delegat do Dispatchera
         public Action CloseAction { get; set; }
         public ICommand ExecuteRejestr { get; }
         public ICommand ExecuteLog { get; }

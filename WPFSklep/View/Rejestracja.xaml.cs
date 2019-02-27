@@ -26,7 +26,7 @@ namespace WPFSklep
             
             InitializeComponent();
             RejestracjaViewModel rvm = new RejestracjaViewModel();
-            DataContext = new RejestracjaViewModel();
+            DataContext = rvm;//new RejestracjaViewModel();
             if (rvm.CloseAction == null)
                 rvm.CloseAction = new Action(this.Close);
         }

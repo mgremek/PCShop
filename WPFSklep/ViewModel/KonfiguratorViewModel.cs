@@ -15,8 +15,8 @@ namespace WPFSklep.ViewModel
     {
         WCF.ProduktyClient pc;
         public Action CloseAction { get; set; }
-        
         public CommandHandler ExecuteCommand { get; }
+        public ProduktyService.Products ProductActive {get; set;}
         public ObservableCollection<ProduktyService.Products> ListaCPU { get; set; }
         public ObservableCollection<ProduktyService.Products> ListaGPU { get; set; }
         public ObservableCollection<ProduktyService.Products> ListaPlyty { get; set; }
@@ -24,11 +24,13 @@ namespace WPFSklep.ViewModel
         public ObservableCollection<ProduktyService.Products> ListaMonitory { get; set; }
         public ObservableCollection<ProduktyService.Products> ListaObudowy { get; set; }
         public CommandHandler ExecuteExit { get; private set; }
+        public CommandHandler ExecuteDetails { get; private set; }
 
         public KonfiguratorViewModel()
         {
             pc = new WCF.ProduktyClient();
             ExecuteCommand = new CommandHandler(Execute, () => true);
+            ProductActive = new ProduktyService.Products();
             //Parallel.Invoke(() => listaProduktow=wke.Products_TEST.ToList());
             //Thread t2 = new Thread(() => ListaCPU = new ObservableCollection<WCF.Products_TEST>(GetCPU()));
             ListaCPU = new ObservableCollection<ProduktyService.Products>(GetProducts(1));
@@ -41,14 +43,16 @@ namespace WPFSklep.ViewModel
             //Thread t1 = new Thread(() => ListaGPU = new ObservableCollection<WCF.Products_TEST>(GetGPU()));
             //t1.Start();
             ExecuteExit = new CommandHandler(ExeExit, () => true);
+            ExecuteDetails = new CommandHandler(ExeDet, () => true);
         }
+
         //GET_CZESC
-        #region
+
         private List<ProduktyService.Products> GetProducts(int SubId)
         {
             return pc.GetProdukty(SubId).ToList<ProduktyService.Products>();
         }
-
+        #region
         //private List<ProduktyService.Products_TEST> GetGPU()
         //{
         //    return pc.GetGpu().Take(20).ToList();
@@ -88,6 +92,12 @@ namespace WPFSklep.ViewModel
         public void Execute()
         {
 
+        }
+        private void ExeDet()
+        {
+            var cos=pc.GetXml(ProductActive.ProdID);
+            View.ProdDetails pd = new View.ProdDetails(cos);
+            pd.ShowDialog();
         }
         private void ExeExit()
         {

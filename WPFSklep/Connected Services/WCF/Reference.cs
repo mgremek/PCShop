@@ -38,6 +38,12 @@ namespace WPFSklep.WCF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/IsLogged", ReplyAction="http://tempuri.org/IProdukty/IsLoggedResponse")]
         System.Threading.Tasks.Task<bool> IsLoggedAsync(string pass, string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetXml", ReplyAction="http://tempuri.org/IProdukty/GetXmlResponse")]
+        string GetXml(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdukty/GetXml", ReplyAction="http://tempuri.org/IProdukty/GetXmlResponse")]
+        System.Threading.Tasks.Task<string> GetXmlAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,6 +103,14 @@ namespace WPFSklep.WCF {
         
         public System.Threading.Tasks.Task<bool> IsLoggedAsync(string pass, string login) {
             return base.Channel.IsLoggedAsync(pass, login);
+        }
+        
+        public string GetXml(int id) {
+            return base.Channel.GetXml(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetXmlAsync(int id) {
+            return base.Channel.GetXmlAsync(id);
         }
     }
 }

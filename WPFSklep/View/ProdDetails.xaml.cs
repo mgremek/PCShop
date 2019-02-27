@@ -19,9 +19,12 @@ namespace WPFSklep.View
     /// </summary>
     public partial class ProdDetails : Window
     {
-        public ProdDetails()
+        public ProdDetails(string xml)
         {
             InitializeComponent();
+
+            ViewModel.ProductDetailsViewModel pdv = new ViewModel.ProductDetailsViewModel(xml);
+            DataContext = pdv;
         }
     }
 }

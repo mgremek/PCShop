@@ -108,6 +108,7 @@
     <Compile Include="Products_TEST.cs">
       <DependentUpon>KompyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ProductDetailsViewModel.cs" />
     <Compile Include="ViewModel\RejestracjaViewModel.cs" />
     <Compile Include="SubCategory.cs">
       <DependentUpon>KompyModel.tt</DependentUpon>

@@ -4,10 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSklep.View"
+        xmlns:viewModel="clr-namespace:WPFSklep.ViewModel"
         mc:Ignorable="d"
-        Title="ProdDetails" Height="350" Width="340">
-
-
+        Title="ProdDetails" Height="310" Width="340" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewModel:ProductDetailsViewModel/>
+    </Window.DataContext>
     <StackPanel Margin="0,0,0.4,-8">
         <Grid Margin="10,10,10,10" >
             <Grid.ColumnDefinitions>
@@ -19,13 +21,7 @@
                 <Label Grid.Column="1" x:Name="lblDet" Content="Product Details" HorizontalAlignment="Center"
                    FontSize="20"/>
                 <Border BorderThickness="1" BorderBrush="Black">
-                    <TextBlock  Margin="5.2,5,5.8,5" TextWrapping="Wrap"> Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                               "et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                               ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                               dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-                               nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                               sunt in culpa qui officia deserunt mollit anim id est laborum
+                    <TextBlock  Margin="5.2,5,5.8,5" TextWrapping="Wrap" Text="{Binding ProdDetails}"> 
                     </TextBlock>
                 </Border>
 
