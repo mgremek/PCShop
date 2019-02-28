@@ -83,6 +83,7 @@
     <Compile Include="clients.cs">
       <DependentUpon>KompyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\XmlParsing.cs" />
     <Compile Include="ViewModel\Command\CommandHandler.cs" />
     <Compile Include="KompyModel.Context.cs">
       <AutoGen>True</AutoGen>

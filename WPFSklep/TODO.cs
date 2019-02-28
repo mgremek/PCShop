@@ -13,7 +13,9 @@ namespace WPFSklep.ViewModel
         //cala akcja w rejestracji + bindowanie labeli nie dzialajace!!!!!!!!!!!!!!!
         ///////////////////////////
         // dodany nowy window z detailsami produktu, zrobic zeby tam wrzucało xmla sformatowanego dla kazdego produktu, czyli:
-        // dodac viewmodel dla windowsa, podbindowac text z textblocka, dodac formatowanie xmla, ustawic, podbindowac przyciski na konfiguratorze do viewmodelu
+        //      DONE dodac viewmodel dla windowsa, podbindowac text z textblocka, dodac formatowanie xmla,
+        //ustawic, podbindowac przyciski na konfiguratorze do viewmodelu
+        //zbindowany jest tylko dtagrid cpu, zrobic reszte
         /////////////////////////////
         //wątki przy otwieraniu konfiguratora i logowaniu się???
         //cos nie rabotajet, nie da sie w nowym watku otworzyc formularza bo musi byc otwierany z watku STA, (DISPATCHER)

@@ -30,7 +30,7 @@ namespace WPFSklep.ViewModel
         {
             pc = new WCF.ProduktyClient();
             ExecuteCommand = new CommandHandler(Execute, () => true);
-            ProductActive = new ProduktyService.Products();
+            
             //Parallel.Invoke(() => listaProduktow=wke.Products_TEST.ToList());
             //Thread t2 = new Thread(() => ListaCPU = new ObservableCollection<WCF.Products_TEST>(GetCPU()));
             ListaCPU = new ObservableCollection<ProduktyService.Products>(GetProducts(1));
@@ -50,7 +50,14 @@ namespace WPFSklep.ViewModel
 
         private List<ProduktyService.Products> GetProducts(int SubId)
         {
-            return pc.GetProdukty(SubId).ToList<ProduktyService.Products>();
+            try
+            {
+                return pc.GetProdukty(SubId).ToList<ProduktyService.Products>();
+            } catch(Exception)
+            {
+                return new List<ProduktyService.Products>();
+            }
+            
         }
         #region
         //private List<ProduktyService.Products_TEST> GetGPU()
@@ -95,9 +102,13 @@ namespace WPFSklep.ViewModel
         }
         private void ExeDet()
         {
-            var cos=pc.GetXml(ProductActive.ProdID);
-            View.ProdDetails pd = new View.ProdDetails(cos);
-            pd.ShowDialog();
+            
+            if (ProductActive!=null)
+            { 
+                var cos=pc.GetXml(ProductActive.ProdID);
+                View.ProdDetails pd = new View.ProdDetails(cos);
+                pd.ShowDialog();
+            }
         }
         private void ExeExit()
         {

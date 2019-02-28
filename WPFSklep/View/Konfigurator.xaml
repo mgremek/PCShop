@@ -24,27 +24,28 @@
             </TabItem>
             <TabItem Header="Płyty główne">
                 
-                <DataGrid x:Name="dgPlyty" ItemsSource="{Binding ListaPlyty}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
+                <DataGrid x:Name="dgPlyty" ItemsSource="{Binding ListaPlyty}" SelectedItem="{Binding ProductActive}" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="RAM">
-                <DataGrid x:Name="dgRam" ItemsSource="{Binding ListaRAM}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
+                <DataGrid x:Name="dgRam" ItemsSource="{Binding ListaRAM}" SelectedItem="{Binding ProductActive}" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="GPU">
-                <DataGrid x:Name="dgGPU" ItemsSource="{Binding ListaGPU}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
+                <DataGrid x:Name="dgGPU" ItemsSource="{Binding ListaGPU}" SelectedItem="{Binding ProductActive}" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="Monitory">
-                <DataGrid x:Name="dgZasilacze" ItemsSource="{Binding ListaMonitory}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
+                <DataGrid x:Name="dgZasilacze" ItemsSource="{Binding ListaMonitory}" SelectedItem="{Binding ProductActive}" Margin="0,0,-4,0"/>
             </TabItem>
             <TabItem Header="Obudowy">
-                <DataGrid x:Name="dgObudowy" ItemsSource="{Binding ListaObudowy}" SelectedItem="PRODUCT_TEST" Margin="0,0,-4,0"/>
+                <DataGrid x:Name="dgObudowy" ItemsSource="{Binding ListaObudowy}" SelectedItem="{Binding ProductActive}" Margin="0,0,-4,0"/>
             </TabItem>
 
         </TabControl>
+       
         <StackPanel Grid.Column="2" >
             <Button x:Name="btnDetails" Content="Szczegóły"  Margin="10,30,10,0" Height="30" Command="{Binding ExecuteDetails}"/>
             <Button x:Name="btnDodaj" Content="Dodaj" Margin="10,20,10,0" Height="30"/>
             <Button x:Name="btnUsun" Content="Usuń" Margin="10,10" Height="30" />
-            <Button x:Name="btnPowrot" Content="Powrot" Margin="10,250,10,0" Height="28" Command="{Binding ExecuteExit}"/>
+            <Button x:Name="btnPowrot" Content="Powrot" Margin="10,230,10,0" Height="28" Command="{Binding ExecuteExit}"/>
 
         </StackPanel>
 

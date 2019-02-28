@@ -25,7 +25,7 @@ namespace WPFSklep
 
 
             SqlConnection db = new SqlConnection(connectionString);
-            SqlCommand komenda;
+           // SqlCommand komenda;
             try
             {
                 db.Open();
