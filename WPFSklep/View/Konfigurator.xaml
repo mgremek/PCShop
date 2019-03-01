@@ -16,7 +16,7 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabPodzespoly" HorizontalAlignment="Left" Height="425" Margin="10,10,0,0" VerticalAlignment="Top" 
+        <TabControl x:Name="tabPodzespoly" HorizontalAlignment="Left" Height="420" Margin="10,10,0,0" VerticalAlignment="Top" 
                     Width="555" >
             <TabItem Header="CPU">
                 <DataGrid x:Name="dgProcki" ItemsSource="{Binding ListaCPU}"  Margin="0,0,-4.4,1.6" 

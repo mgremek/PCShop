@@ -79,6 +79,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Model\Database.cs" />
+    <Compile Include="Model\Koszyk.cs" />
     <Compile Include="Model\Psswd.cs" />
     <Compile Include="clients.cs">
       <DependentUpon>KompyModel.tt</DependentUpon>
@@ -100,7 +101,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KompyModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\INotifyPropertyChanaged.cs" />
     <Compile Include="ViewModel\KonfiguratorViewModel.cs" />
+    <Compile Include="ViewModel\KoszykViewModell.cs" />
     <Compile Include="ViewModel\LogowanieViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="Manufacturers.cs">
@@ -118,6 +121,9 @@
     <Compile Include="View\Konfigurator.xaml.cs">
       <DependentUpon>Konfigurator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\KoszykView.xaml.cs">
+      <DependentUpon>KoszykView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Logowanie.xaml.cs">
       <DependentUpon>Logowanie.xaml</DependentUpon>
     </Compile>
@@ -133,6 +139,10 @@
     </Compile>
     <Compile Include="Model\Zasilacz.cs" />
     <Page Include="View\Konfigurator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KoszykView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
