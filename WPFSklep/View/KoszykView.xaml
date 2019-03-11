@@ -7,14 +7,23 @@
         xmlns:viewModel="clr-namespace:WPFSklep.ViewModel"
         mc:Ignorable="d"
         Title="KoszykView" Height="450" Width="800">
-    <Window.DataContext>
-        <viewModel:KoszykViewModell/>
-    </Window.DataContext>
+    <!--<Window.DataContext>
+        --><!--<viewModel:KoszykViewModell/>--><!--
+    </Window.DataContext>-->
     <Grid>
         <StackPanel>
             <Label x:Name="lblCzeresnie" Content="Czereśnie.NET" HorizontalAlignment="Center" FontSize="27"/>
             <Label x:Name="lblKoszyk" Content="Koszyk" HorizontalAlignment="Center" FontSize="20" Margin="0,40,0,0"/>
             <DataGrid Margin="30,10,30,10"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+            
+                <Button Grid.Column="0" x:Name="btnPowrot" Content="Powrót" FontSize="20" Height="50" Width="200"/>
+                <Button Grid.Column="1" x:Name="btnDoKasy" Content="DoKasy" FontSize="20" Height="50" Width="200"/>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
