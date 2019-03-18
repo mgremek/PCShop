@@ -25,6 +25,7 @@ namespace WPFSklep.ViewModel
         public ObservableCollection<ProduktyService.Products> ListaObudowy { get; set; }
         public CommandHandler ExecuteExit { get; private set; }
         public CommandHandler ExecuteDetails { get; private set; }
+        public CommandHandler AddToBasket { get; set; }
 
         public KonfiguratorViewModel()
         {
@@ -44,6 +45,12 @@ namespace WPFSklep.ViewModel
             //t1.Start();
             ExecuteExit = new CommandHandler(ExeExit, () => true);
             ExecuteDetails = new CommandHandler(ExeDet, () => true);
+            AddToBasket = new CommandHandler(AddBask, () => true);
+        }
+
+        private void AddBask()
+        {
+            throw new NotImplementedException();
         }
 
         //GET_CZESC
@@ -56,8 +63,7 @@ namespace WPFSklep.ViewModel
             } catch(Exception)
             {
                 return new List<ProduktyService.Products>();
-            }
-            
+            }           
         }
         #region
         //private List<ProduktyService.Products_TEST> GetGPU()
@@ -101,8 +107,7 @@ namespace WPFSklep.ViewModel
 
         }
         private void ExeDet()
-        {
-            
+        {            
             if (ProductActive!=null)
             { 
                 var cos=pc.GetXml(ProductActive.ProdID);

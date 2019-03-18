@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:WPFSklep.View"
         xmlns:viewModel="clr-namespace:WPFSklep.ViewModel"
         mc:Ignorable="d"
-        Title="KoszykView" Height="450" Width="800">
-    <!--<Window.DataContext>
-        --><!--<viewModel:KoszykViewModell/>--><!--
-    </Window.DataContext>-->
+        Title="KoszykView" Height="450" Width="570">
+    <Window.DataContext>
+        <viewModel:KoszykViewModell/>
+    </Window.DataContext>
     <Grid>
         <StackPanel>
             <Label x:Name="lblCzeresnie" Content="Czereśnie.NET" HorizontalAlignment="Center" FontSize="27"/>

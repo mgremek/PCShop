@@ -17,26 +17,23 @@ namespace WPFSklep.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public string Login { get; set; }
         public string Pass { get; set; }
-        public Visibility lblErr { get; set; }
+        public bool lblErr { get; set; }
         public LogowanieViewModel()
         {
             ExecuteCommand = new CommandHandler(Execute, () => true);
             wcf = new WCF.ProduktyClient();
+           // lblErr = false;
         }
         private void Execute()
-        {
-            
+        {          
            if (wcf.IsLogged(Pass,Login))
             {
                 CloseAction();
             }
            else
             {
-                // pokaz labele o zlym hasle
-            }
-            
-        }
-        
-       
+                lblErr = true;
+            }           
+        }              
     }
 }

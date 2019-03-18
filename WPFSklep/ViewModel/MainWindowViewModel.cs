@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using WPFSklep.View;
 
 namespace WPFSklep.ViewModel
 {
@@ -19,12 +20,20 @@ namespace WPFSklep.ViewModel
         public ICommand ExecuteLog { get; }
         public ICommand ExecuteKonf { get; }
         public ICommand ExecuteExit { get; }
+        public ICommand ExecuteBasket { get; set; }
         public MainWindowViewModel()
         {
             ExecuteRejestr = new CommandHandler(ExeRejestr, () => true);
             ExecuteLog = new CommandHandler(ExeLog, () => true);
             ExecuteKonf = new CommandHandler(ExeKonf, () => true);
             ExecuteExit = new CommandHandler(ExeExit, () => true);
+            ExecuteBasket = new CommandHandler(ExeBask, () => true);
+        }
+
+        private void ExeBask()
+        {
+            KoszykView kvm = new KoszykView();
+            kvm.ShowDialog();          
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -57,11 +57,12 @@
             
             <Button x:Name="btnKoszyk" Content="Koszyk" HorizontalAlignment="Center" 
                     Padding="9" Margin="0 10 0 3" Width="220" 
-                    FontSize="22" FontFamily="Sitka Subheading"/>
+                    FontSize="22" FontFamily="Sitka Subheading" Command="{Binding ExecuteBasket}"/>
             
             <Button x:Name="btnWyjscie" Content="Wyjście" HorizontalAlignment="Center" 
                     Padding="9" Margin="0 10 0 3" Width="220" 
                     FontSize="22" FontFamily="Sitka Subheading" Command="{Binding ExecuteExit}"/>
+            
         </StackPanel>
     </Border>
     

@@ -20,7 +20,7 @@ namespace WPFSklep.ViewModel
         //KOSSZYK ZROBIC I PODBINDOWAC PRZYCISKU
         //JAK MIEC DOSTEP DO KOSZYKA? PRZEKAZYWAC W KONSTRUKTORZE CZY KLASA STATYCZNA?
         //-> koszyk jako tabele w bazie, przy dodawaniu do koszyka dodajesz produkty do tabeli, ustawiasz na status acive czy cos podobnego, przy usunieciu koszyka ustawiasz status na inactive
-        // dodac statusy słownikowe do tabeli Basketcode
+        // dodac statusy słownikowe do tabeli Basketcode +
 
         /////////////////////////////
         ///
@@ -32,5 +32,7 @@ namespace WPFSklep.ViewModel
 
         // Service1.cs w produktyService metoda GetProdukty() poprawić zeby pobieral nazwe subcategorii i odpowiednie kolmuny, zrobic tak dla reszty
 
+
+        // napisac swoj wlasny konwertere booleantovisibility z hidden i collapsed
     }
 }
