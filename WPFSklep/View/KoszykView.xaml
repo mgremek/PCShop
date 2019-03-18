@@ -15,6 +15,7 @@
             <Label x:Name="lblCzeresnie" Content="Czereśnie.NET" HorizontalAlignment="Center" FontSize="27"/>
             <Label x:Name="lblKoszyk" Content="Koszyk" HorizontalAlignment="Center" FontSize="20" Margin="0,40,0,0"/>
             <DataGrid Margin="30,10,30,10"/>
+            <ListView x:Name="lvKoszyk" Margin="30,10,30,10"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>

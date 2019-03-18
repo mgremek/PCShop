@@ -101,7 +101,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KompyModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\INotifyPropertyChanaged.cs" />
     <Compile Include="ViewModel\KonfiguratorViewModel.cs" />
     <Compile Include="ViewModel\KoszykViewModell.cs" />
     <Compile Include="ViewModel\LogowanieViewModel.cs" />
