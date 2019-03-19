@@ -7,33 +7,48 @@
         xmlns:viewModel="clr-namespace:WPFSklep.ViewModel"
         xmlns:ff="clr-namespace:WPFSklep.Model"
         mc:Ignorable="d"
-        Title="Logowanie" Height="165.05" Width="235.2"
+        Title="Logowanie" Height="150" Width="230"
         WindowStartupLocation="CenterScreen">
-    
+
     <Window.DataContext>
         <viewModel:LogowanieViewModel/>
     </Window.DataContext>
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
     </Window.Resources>
-    
-    <Grid HorizontalAlignment="Left" Margin="0,0,-6.2,0.2" Width="235">
+
+    <Grid HorizontalAlignment="Left" Margin="0,0,-6.2,0.2" Width="Auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lblLogin" Content="Login:" HorizontalAlignment="Left" Height="31" 
-               Margin="16,21,0,0" VerticalAlignment="Top" Width="44"/>
-        <Label x:Name="lblHaslo" Content="Hasło:" HorizontalAlignment="Left" Height="26" 
-               Margin="16,50,0,0" VerticalAlignment="Top" Width="49"/>
-        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="21" Margin="65,23,0,0" 
-                 TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Text="{Binding Login}"/>
-        <PasswordBox x:Name="pbHaslo" HorizontalAlignment="Left" Height="20" Margin="65,52,0,0" 
-                     VerticalAlignment="Top" Width="132" PasswordChanged="pbHaslo_PasswordChanged" ff:Psswd.BindPassword="true" />
-        <Button x:Name="btnZaloguj" Content="Zaloguj" HorizontalAlignment="Left" Height="22" 
-                Margin="65,99,0,0" VerticalAlignment="Top" Width="132" Command="{Binding ExecuteCommand}"/>
-        <Label x:Name="lblError" Content="Błędny login lub hasło" HorizontalAlignment="Left" 
-               Height="24" Margin="77,74,0,0" VerticalAlignment="Top" Width="109" Foreground="Red" FontSize="10" Visibility="{Binding Path=LblErr, Converter={StaticResource BoolToVis}}" />
 
+        <StackPanel Margin="0,0,0,0">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,15,0,0" Width="Auto">
+                    <Label x:Name="lblLogin" Content="Login:" HorizontalAlignment="Right" Height="19" Padding="0,0,0,0" 
+                      VerticalAlignment="Top" Width="39" Margin="0,0,0.4,0" />
+                    <Label x:Name="lblHaslo" Content="Hasło:" HorizontalAlignment="Right" Height="19" Padding="0,0,0,0"
+                     VerticalAlignment="Top" Width="39" Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <StackPanel Margin="54,10,10.2,0" Grid.ColumnSpan="2">
+                    <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="21" Margin="10,5,0,0"
+                     TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Text="{Binding Login}"/>
+                    <PasswordBox x:Name="pbHaslo" HorizontalAlignment="Left" Height="20"   Margin="10,5,0,0"
+                     VerticalAlignment="Top" Width="132" PasswordChanged="pbHaslo_PasswordChanged" ff:Psswd.BindPassword="true" />
+                    <Label x:Name="lblError" Content="Błędny login lub hasło" HorizontalAlignment="Left" Padding="0" Margin="12,5,0,0"
+                    Height="14"  VerticalAlignment="Top" Width="100" Foreground="Red" FontSize="10" 
+                    Visibility="{Binding Path=LblErr, Converter={StaticResource BoolToVis}}" />
+                    <Button x:Name="btnZaloguj" Content="Zaloguj" HorizontalAlignment="Left" Height="22" 
+                    Margin="6,5,0,0" VerticalAlignment="Top" Width="132" Command="{Binding ExecuteCommand}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>
