@@ -35,5 +35,9 @@ namespace WPFSklep.ViewModel
       ///BINDOWANIE LABELI
         ////////////////////////
         // napisac swoj wlasny konwertere booleantovisibility z hidden i collapsed
+
+   ///LOGOWANIE DO SKLEPU
+        ////////////////
+        /// usuwać buttona zaloguj sie/zmieniac na wyloguj + usuwanie zarejestruj sie
     }
 }
