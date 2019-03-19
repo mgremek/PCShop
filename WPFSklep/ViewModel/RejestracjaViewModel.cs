@@ -223,7 +223,7 @@ namespace WPFSklep.ViewModel
 
             ////Sprawdzanie poprawnosci adresu email
             Regex regEmail = new Regex("^[a-z][a-z0-9_]*@[a-z0-9]*.[a-z]{2,3}$");
-            ////if(Email!="" && Email!=null)
+            if(Email!="" && Email!=null)
             {
                  if (!regEmail.IsMatch(Email))
                  {
