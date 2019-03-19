@@ -35,7 +35,6 @@
                     <ColumnDefinition Width="2*"/>
 
                 </Grid.ColumnDefinitions>
-                <Border BorderBrush="Black" BorderThickness="1"  Width="280"/>
 
                 <!--Kolumna nr 0 LABELE-->
                 <StackPanel Grid.Column="0" >
@@ -64,8 +63,8 @@
                         TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
                          Grid.Column="1" Margin="0,8,0,7" />
 
-
-                </StackPanel>
+                    </StackPanel>
+                
                 <!--Kolumna nr 2 LABELE-->
                 <StackPanel Grid.Column="2"  >
                     <Label x:Name="lblLogin" Content="Login:" 

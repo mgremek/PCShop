@@ -15,14 +15,64 @@ namespace WPFSklep.ViewModel
         public Action CloseAction { get; set; }
         public CommandHandler ExecuteCommand { get; }
         public event PropertyChangedEventHandler PropertyChanged;
-        public string Login { get; set; }
-        public string Pass { get; set; }
-        public bool lblErr { get; set; }
+        void RaisePropertyChanged(string propertyName_)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName_));
+            }
+        }
+        //public string Login { get; set; }
+        private string login = "";
+        public string Login
+        {
+            get { return login; }
+            set
+            {
+                if (value != login)
+                {
+                    login = value;
+                    RaisePropertyChanged("Login");
+                }
+            }
+        }
+        //---------------------------
+        public string pass { get; set; }
+        public string Pass
+        {
+            get { return pass; }
+            set
+            {
+                if (value != pass)
+                {
+                    pass = value;
+                    RaisePropertyChanged("Pass");
+                }
+            }
+        }
+        //--------------------------------
+       
+        private bool lblErr;
+
+        public bool LblErr
+        {
+            get { return lblErr; }
+            set
+            {
+                if( value!=lblErr )
+                {
+                    lblErr = value;
+                    RaisePropertyChanged("LblErr");
+                }
+               
+            }
+        }
+
         public LogowanieViewModel()
         {
             ExecuteCommand = new CommandHandler(Execute, () => true);
             wcf = new WCF.ProduktyClient();
-           // lblErr = false;
+            LblErr = false;
         }
         private void Execute()
         {          
@@ -32,7 +82,9 @@ namespace WPFSklep.ViewModel
             }
            else
             {
-                lblErr = true;
+                Login = "";
+                Pass = "";
+                LblErr = true;
             }           
         }              
     }

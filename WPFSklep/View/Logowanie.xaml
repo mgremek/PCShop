@@ -33,7 +33,7 @@
         <Button x:Name="btnZaloguj" Content="Zaloguj" HorizontalAlignment="Left" Height="22" 
                 Margin="65,99,0,0" VerticalAlignment="Top" Width="132" Command="{Binding ExecuteCommand}"/>
         <Label x:Name="lblError" Content="Błędny login lub hasło" HorizontalAlignment="Left" 
-               Height="24" Margin="77,74,0,0" VerticalAlignment="Top" Width="109" Foreground="Red" FontSize="10" Visibility="{Binding lblErr, Mode=TwoWay, Converter={StaticResource BoolToVis}}" />
+               Height="24" Margin="77,74,0,0" VerticalAlignment="Top" Width="109" Foreground="Red" FontSize="10" Visibility="{Binding Path=LblErr, Converter={StaticResource BoolToVis}}" />
 
     </Grid>
 </Window>
