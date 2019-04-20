@@ -25,6 +25,9 @@ namespace WPFSklep.View
             InitializeComponent();
             KoszykViewModell kvm = new KoszykViewModell();
             DataContext = kvm;
+            if (kvm.CloseAction == null)
+                kvm.CloseAction = new Action(this.Close);
         }
+
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFSklep.View"
         xmlns:viewModel="clr-namespace:WPFSklep.ViewModel"
         mc:Ignorable="d"
-        Title="KoszykView" Height="450" Width="570">
+        Title="KoszykView" Height="450" Width="570" WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <viewModel:KoszykViewModell/>
     </Window.DataContext>
@@ -22,7 +22,7 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
             
-                <Button Grid.Column="0" x:Name="btnPowrot" Content="Powrót" FontSize="20" Height="50" Width="200"/>
+                <Button Grid.Column="0" x:Name="btnPowrot" Content="Powrót" FontSize="20" Height="50" Width="200" Command="{Binding ExecuteReturn}"/>
                 <Button Grid.Column="1" x:Name="btnDoKasy" Content="DoKasy" FontSize="20" Height="50" Width="200"/>
             </Grid>
         </StackPanel>

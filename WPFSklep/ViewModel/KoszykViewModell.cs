@@ -10,5 +10,16 @@ namespace WPFSklep.ViewModel
     class KoszykViewModell : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        public Action CloseAction { get; set; }
+        public CommandHandler ExecuteReturn { get; }
+        public KoszykViewModell()
+        {
+            ExecuteReturn = new CommandHandler(ExeRet, () => true);
+        }
+
+        private void ExeRet()
+        {
+            CloseAction();
+        }
     }
 }
